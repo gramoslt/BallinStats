@@ -32,6 +32,7 @@ struct PlayersTabView: View {
                     }
                 }
             }
+            .preferredColorScheme(.dark)
             .listStyle(.plain)
             //            .background(Color(ColorString.backgroundColor))
             .navigationBarTitle(TabViewConstants.playersLabel)
