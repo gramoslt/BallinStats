@@ -8,13 +8,29 @@
 import SwiftUI
 
 struct TeamsTabView: View {
+    @ObservedObject var teamsTabViewModel: TeamsTabViewModel
+    let columns = [
+        GridItem(.adaptive(minimum: 150))
+    ]
+
     var body: some View {
-        Text("Teams View")
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: columns) {
+                    ForEach(TeamsTabViewModel.teamsMock, id: \.self) { team in
+                        Text(team)
+                    }
+                }
+            }
+            .navigationTitle(TabViewConstants.teamsLabel)
+            .background(Color("Dark-Blue-BackgroundColor"))
+            .preferredColorScheme(.dark)
+        }
     }
 }
 
 struct TeamsTabView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamsTabView()
+        TeamsTabView(teamsTabViewModel: TeamsTabViewModel())
     }
 }
