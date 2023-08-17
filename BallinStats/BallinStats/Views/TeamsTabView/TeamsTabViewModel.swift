@@ -10,6 +10,6 @@ import Foundation
 @MainActor class TeamsTabViewModel: ObservableObject {
 //    @Published var teams: [TeamDetails] = []
     @Published var teams: [String] = []
-    
+
     static let teamsMock = ["Lakers", "Celtics", "Hawks"]
 }
