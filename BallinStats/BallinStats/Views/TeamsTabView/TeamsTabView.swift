@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TeamsTabView: View {
     var body: some View {
-        Text("Hello, World!")
+        Text("Teams View")
     }
 }
 

@@ -13,5 +13,5 @@ enum TabViewConstants {
     public static let followingLabel = "Following"
     public static let teamsIconString = "basketball.fill"
     public static let playersIconString = "figure.basketball"
-    public static let followingIconString = "star.following"
+    public static let followingIconString = "star.fill"
 }
