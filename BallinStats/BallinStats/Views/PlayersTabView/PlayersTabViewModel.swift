@@ -9,5 +9,7 @@ import Foundation
 
 @MainActor class PlayersTabViewModel: ObservableObject {
     @Published var searchText: String = ""
-//    @Published var players: [Player] = []
+    @Published var players: [Player] = []
+    
+    
 }

@@ -14,7 +14,17 @@ struct PlayersTabView: View {
         NavigationStack {
             ScrollView {
                 List {
-                    
+                    ForEach(playersTabViewModel.players) { player in
+                        NavigationLink {
+                            
+                        } label: {
+                            VStack {
+                                HStack {
+                                    Text(player.firstName + player.lastName)
+                                }
+                            }
+                        }
+                    }
                 }
             }
 //            .background(Color(ColorString.backgroundColor))
