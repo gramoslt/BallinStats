@@ -11,13 +11,13 @@ enum Division: String, CaseIterable, Identifiable {
     var id: Self {
       return self
     }
+    case AllTeams = "All Teams"
     case Atlantic
     case Central
     case Southeast
     case Northwest
     case Pacific
     case Southwest
-    case AllTeams = "All Teams"
 }
 
 @MainActor class TeamsTabViewModel: ObservableObject {
