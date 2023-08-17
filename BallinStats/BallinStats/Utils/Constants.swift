@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum ColorString {
+    public static let red = "RedAccentColor"
+    public static let yellowStroke = "StrokeColor"
+    public static let backgroundColor = "Dark-Blue-BackgroundColor"
+}
+
 enum TabViewConstants {
     public static let teamsLabel = "Teams"
     public static let playersLabel = "Players"
@@ -19,5 +25,4 @@ enum TabViewConstants {
 enum TeamsTabViewConstants {
     public static let logoWidth = CGFloat(160)
     public static let logoHeight = CGFloat(140)
-
 }
