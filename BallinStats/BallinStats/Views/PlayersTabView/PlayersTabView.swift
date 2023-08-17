@@ -12,22 +12,28 @@ struct PlayersTabView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                List {
-                    ForEach(playersTabViewModel.players) { player in
-                        NavigationLink {
-                            
-                        } label: {
-                            VStack {
-                                HStack {
-                                    Text(player.firstName + player.lastName)
-                                }
+            List {
+                ForEach(playersTabViewModel.players) { player in
+                    NavigationLink {
+                        PlayerDetailsView(player: player)
+                    } label: {
+                        HStack {
+                            Image(player.team.logoString)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 50)
+                            VStack(alignment: .leading) {
+                                Text(player.fullName)
+                                Text("Team: \(player.team.abbreviation)")
                             }
+                            Spacer()
+                            Text("Details")
                         }
                     }
                 }
             }
-//            .background(Color(ColorString.backgroundColor))
+            .listStyle(.plain)
+            //            .background(Color(ColorString.backgroundColor))
             .navigationBarTitle(TabViewConstants.playersLabel)
             .searchable(
                 text: $playersTabViewModel.searchText,
