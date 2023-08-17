@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TeamDetails: Codable, Identifiable, Equatable {
+struct TeamDetails: Codable, Identifiable {
     let id: Int
     let abbreviation: String
     let city: String
