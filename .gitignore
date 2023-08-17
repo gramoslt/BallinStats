@@ -47,7 +47,9 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
+*.xcuserstate
 
 ## User settings
-*.xcuserstate
+xcuserdata/
+!*.xcodeproj/xcshareddata/
 
