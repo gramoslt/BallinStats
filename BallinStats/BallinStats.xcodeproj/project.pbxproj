@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */; };
+		E6807D672A8DB971009B32AC /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D662A8DB971009B32AC /* TeamDetails.swift */; };
 		E6807D5A2A8DA069009B32AC /* TabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D592A8DA069009B32AC /* TabNavigationView.swift */; };
 		E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */; };
 		E6807D5E2A8DA324009B32AC /* TeamsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabViewModel.swift; sourceTree = "<group>"; };
+		E6807D662A8DB971009B32AC /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		E6807D592A8DA069009B32AC /* TabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationView.swift; sourceTree = "<group>"; };
 		E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTabView.swift; sourceTree = "<group>"; };
 		E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		E68FDB122A8D5AE800A9AE60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E6807D662A8DB971009B32AC /* TeamDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */,
+				E6807D672A8DB971009B32AC /* TeamDetails.swift in Sources */,
 				E6807D5E2A8DA324009B32AC /* TeamsTabView.swift in Sources */,
 				E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */,
 				E68FDB042A8D5A7D00A9AE60 /* BallinStatsApp.swift in Sources */,
