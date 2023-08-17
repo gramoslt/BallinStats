@@ -16,9 +16,38 @@ struct TeamsTabView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
+                HStack {
+                    Picker("Category", selection: $teamsTabViewModel.selectedFilter){
+                        ForEach(Division.allCases) { division in
+                                Text(division.rawValue.capitalized)
+                            }
+                    }
+                    Spacer()
+                }
+
                 LazyVGrid(columns: columns) {
                     ForEach(TeamsTabViewModel.teamsMock, id: \.self) { team in
-                        Text(team)
+                        VStack {
+                            Image("Heat-logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                            
+                            VStack {
+                                Text(team)
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.vertical)
+                            .frame(maxWidth: .infinity)
+                            .background(.red)
+                        }
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.yellow)
+                        )
+                        .padding()
                     }
                 }
             }
