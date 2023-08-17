@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */; };
 		E6807D5A2A8DA069009B32AC /* TabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D592A8DA069009B32AC /* TabNavigationView.swift */; };
 		E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */; };
 		E6807D5E2A8DA324009B32AC /* TeamsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		E6807D592A8DA069009B32AC /* TabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationView.swift; sourceTree = "<group>"; };
 		E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTabView.swift; sourceTree = "<group>"; };
 		E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E668BE762A8EBC1E00E4C096 /* PlayerDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */,
+			);
+			path = PlayerDetailsView;
+			sourceTree = "<group>";
+		};
 		E6807D612A8DA38B009B32AC /* PlayersTabView */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		E68FDB112A8D5AB900A9AE60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E668BE762A8EBC1E00E4C096 /* PlayerDetailsView */,
 				E6807D622A8DA3B5009B32AC /* TeamsTabView */,
 				E6807D612A8DA38B009B32AC /* PlayersTabView */,
 				E6807D632A8DA3C8009B32AC /* FollowingTabView */,
@@ -246,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */,
 				E6807D672A8DB971009B32AC /* TeamDetails.swift in Sources */,
 				E6807D5E2A8DA324009B32AC /* TeamsTabView.swift in Sources */,
 				E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */,
