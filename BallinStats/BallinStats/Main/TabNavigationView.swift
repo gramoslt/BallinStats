@@ -12,17 +12,23 @@ struct TabNavigationView: View {
         TabView {
             TeamsTabView()
                 .tabItem {
-                    Label("Teams", systemImage: "basketball.fill")
+                    Label(TabViewConstants.teamsLabel,
+                          systemImage: TabViewConstants.teamsIconString
+                    )
                 }
 
             PlayersTabView()
                 .tabItem {
-                    Label("Players", systemImage: "figure.basketball")
+                    Label(TabViewConstants.playersLabel,
+                          systemImage: TabViewConstants.playersIconString
+                    )
                 }
 
             FollowingTabView()
                 .tabItem {
-                    Label("Following", systemImage: "star.fill")
+                    Label(TabViewConstants.followingLabel,
+                          systemImage: TabViewConstants.followingIconString
+                    )
                 }
         }
     }
