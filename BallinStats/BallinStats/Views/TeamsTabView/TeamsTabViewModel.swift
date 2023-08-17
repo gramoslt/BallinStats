@@ -21,9 +21,18 @@ enum Division: String, CaseIterable, Identifiable {
 }
 
 @MainActor class TeamsTabViewModel: ObservableObject {
-    @Published var teams: [TeamDetails] = []
+    @Published var teams: [TeamDetails] = teamsMock
     @Published var selectedFilter: Division = .AllTeams
+    var filteredTeams: [TeamDetails] {
+        if selectedFilter == .AllTeams {
+            return teams
+        } else {
+            return self.teams.filter({$0.division == selectedFilter.rawValue})
+        }
+    }
+}
 
+extension TeamsTabViewModel {
     static let teamsMock = [
         TeamDetails.mockLAL,
         TeamDetails.mockBOS,
