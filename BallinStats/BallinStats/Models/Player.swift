@@ -11,6 +11,9 @@ struct Player: Codable, Identifiable {
     let id: Int
     let firstName: String
     let lastName: String
+    var fullName: String {
+        "\(firstName) \(lastName)"
+    }
     let position: String
     let heightFeet: Int
     let heightInches: Int
