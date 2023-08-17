@@ -25,12 +25,12 @@ struct DivisionPicker: View {
 struct TeamsDynamicGrid: View {
     @ObservedObject var teamsTabViewModel: TeamsTabViewModel
     let columns = [
-        GridItem(.adaptive(minimum: 150))
+        GridItem(.adaptive(minimum: TeamsTabViewConstants.columnMinimum))
     ]
     
     var body: some View {
         LazyVGrid(columns: columns) {
-            ForEach(TeamsTabViewModel.teamsMock) { team in
+            ForEach(teamsTabViewModel.filteredTeams) { team in
                 TeamLogoButton(team: team)
             }
         }
@@ -56,11 +56,11 @@ struct TeamLogoButton: View {
             .frame(maxWidth: .infinity)
             .background(Color(ColorString.red))
         }
-        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .clipShape(RoundedRectangle(cornerRadius: TeamsTabViewConstants.cornerRadius))
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: TeamsTabViewConstants.cornerRadius)
                 .stroke(Color(ColorString.yellowStroke))
         )
-        .padding(10)
+        .padding(TeamsTabViewConstants.padding)
     }
 }
