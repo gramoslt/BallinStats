@@ -13,17 +13,20 @@ enum Division: String, CaseIterable, Identifiable {
     }
     case Atlantic
     case Central
-    case SouthEast
-    case NorthWest
+    case Southeast
+    case Northwest
     case Pacific
-    case SouthWest
+    case Southwest
     case AllTeams = "All Teams"
 }
 
 @MainActor class TeamsTabViewModel: ObservableObject {
-//    @Published var teams: [TeamDetails] = []
-    @Published var teams: [String] = []
+    @Published var teams: [TeamDetails] = []
     @Published var selectedFilter: Division = .AllTeams
 
-    static let teamsMock = ["Lakers", "Celtics", "Hawks"]
+    static let teamsMock = [
+        TeamDetails.mockLAL,
+        TeamDetails.mockBOS,
+        TeamDetails.mockATL
+    ]
 }

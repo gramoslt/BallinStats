@@ -15,3 +15,9 @@ enum TabViewConstants {
     public static let playersIconString = "figure.basketball"
     public static let followingIconString = "star.fill"
 }
+
+enum TeamsTabViewConstants {
+    public static let logoWidth = CGFloat(160)
+    public static let logoHeight = CGFloat(140)
+
+}
