@@ -15,6 +15,9 @@ struct TeamDetails: Codable, Identifiable, Equatable {
     let division: String
     let fullName: String
     let name: String
+    var logoString: String {
+        self.name + "-logo"
+    }
 
     enum CodingKeys: String, CodingKey {
         case id,
@@ -25,7 +28,9 @@ struct TeamDetails: Codable, Identifiable, Equatable {
              fullName = "full_name",
              name
     }
+}
 
+extension TeamDetails {
     static let mock = TeamDetails(
         id: 14,
         abbreviation: "LAL",
