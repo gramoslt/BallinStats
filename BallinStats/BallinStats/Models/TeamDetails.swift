@@ -25,4 +25,14 @@ struct TeamDetails: Codable, Identifiable, Equatable {
              fullName = "full_name",
              name
     }
+
+    static let mock = TeamDetails(
+        id: 14,
+        abbreviation: "LAL",
+        city: "Los Angeles",
+        conference: "West",
+        division: "Pacific",
+        fullName: "Los Angeles Lakers",
+        name: "Lakers"
+    )
 }
