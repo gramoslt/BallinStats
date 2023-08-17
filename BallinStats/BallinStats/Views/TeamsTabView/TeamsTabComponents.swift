@@ -31,28 +31,36 @@ struct TeamsDynamicGrid: View {
     var body: some View {
         LazyVGrid(columns: columns) {
             ForEach(TeamsTabViewModel.teamsMock) { team in
-                VStack {
-                    Image(team.logoString)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: TeamsTabViewConstants.logoWidth, height: TeamsTabViewConstants.logoHeight)
-                    
-                    VStack {
-                        Text(team.fullName)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.vertical)
-                    .frame(maxWidth: .infinity)
-                    .background(Color("RedAccentColor"))
-                }
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("StrokeColor"))
-                )
-                .padding(10)
+                TeamLogoButton(team: team)
             }
         }
+    }
+}
+
+struct TeamLogoButton: View {
+    let team: TeamDetails
+    
+    var body: some View {
+        VStack {
+            Image(team.logoString)
+                .resizable()
+                .scaledToFit()
+                .frame(width: TeamsTabViewConstants.logoWidth, height: TeamsTabViewConstants.logoHeight)
+            
+            VStack {
+                Text(team.fullName)
+                    .font(.headline)
+                    .foregroundColor(.white)
+            }
+            .padding(.vertical)
+            .frame(maxWidth: .infinity)
+            .background(Color(ColorString.red))
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color(ColorString.yellowStroke))
+        )
+        .padding(10)
     }
 }
