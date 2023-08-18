@@ -8,13 +8,24 @@
 import SwiftUI
 
 struct TeamsTabView: View {
+    @ObservedObject var teamsTabViewModel: TeamsTabViewModel
+
     var body: some View {
-        Text("Teams View")
+        NavigationStack {
+            ScrollView {
+                DivisionPicker(teamsTabViewModel: teamsTabViewModel)
+
+                TeamsDynamicGrid(teamsTabViewModel: teamsTabViewModel)
+            }
+            .navigationTitle(TabViewConstants.teamsLabel)
+            .background(.customBackgroundColor)
+            .preferredColorScheme(.dark)
+        }
     }
 }
 
 struct TeamsTabView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamsTabView()
+        TeamsTabView(teamsTabViewModel: TeamsTabViewModel())
     }
 }

@@ -9,10 +9,11 @@ import SwiftUI
 
 struct TabNavigationView: View {
     @StateObject var playersTabViewModel: PlayersTabViewModel = PlayersTabViewModel()
+    @StateObject var teamsTabViewModel = TeamsTabViewModel()
 
     var body: some View {
         TabView {
-            TeamsTabView()
+            TeamsTabView(teamsTabViewModel: teamsTabViewModel)
                 .tabItem {
                     Label(TabViewConstants.teamsLabel,
                           systemImage: TabViewConstants.teamsIconString
