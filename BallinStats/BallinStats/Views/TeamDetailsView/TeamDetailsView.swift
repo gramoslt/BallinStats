@@ -9,8 +9,20 @@ import SwiftUI
 
 struct TeamDetailsView: View {
     var team: TeamDetails
+
     var body: some View {
-        Text(team.fullName)
+        NavigationStack {
+            ScrollView {
+                HStack{
+                    Text(team.abbreviation)
+                        .font(.title)
+                        .bold()
+                    Spacer()
+                }
+                .padding(.horizontal)
+            }
+            .navigationTitle(team.fullName)
+        }
     }
 }
 
