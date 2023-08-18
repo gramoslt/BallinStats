@@ -27,6 +27,6 @@ enum TeamsTabViewConstants {
 enum TeamDetailsViewConstants {
     public static let logoWidth = CGFloat(360)
     public static let columnMinimum = CGFloat(300)
-    public static let lastGamesPlayedText = "5 Games:"
+    public static let lastGamesPlayedText = "Last Games Played:"
     public static let gridLogoHeight = CGFloat(20)
 }
