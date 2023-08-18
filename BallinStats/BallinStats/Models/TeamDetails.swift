@@ -31,7 +31,7 @@ struct TeamDetails: Codable, Identifiable {
 }
 
 extension TeamDetails {
-    static let mock = TeamDetails(
+    static let mockLAL = TeamDetails(
         id: 14,
         abbreviation: "LAL",
         city: "Los Angeles",
@@ -39,5 +39,23 @@ extension TeamDetails {
         division: "Pacific",
         fullName: "Los Angeles Lakers",
         name: "Lakers"
+    )
+    static let mockBOS = TeamDetails(
+        id: 2,
+        abbreviation: "BOS",
+        city: "Boston",
+        conference: "East",
+        division: "Atlantic",
+        fullName: "Boston Celtics",
+        name: "Celtics"
+    )
+    static let mockATL = TeamDetails(
+        id: 1,
+        abbreviation: "ATL",
+        city: "Atlanta",
+        conference: "East",
+        division: "Southeast",
+        fullName: "Atlanta Hawks",
+        name: "Hawks"
     )
 }
