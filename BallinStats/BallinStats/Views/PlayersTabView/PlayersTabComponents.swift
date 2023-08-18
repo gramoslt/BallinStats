@@ -29,7 +29,7 @@ struct PlayersList: View {
         .navigationBarTitle(TabViewConstants.playersLabel)
         .searchable(
             text: $playersTabViewModel.searchText,
-            prompt: "Search Player"
+            prompt: PlayersTabViewConstants.searchPrompt
         )
     }
 }
@@ -48,15 +48,12 @@ struct PlayerRow: View {
                 Text(player.fullName)
                     .font(.title3)
                     .bold()
-                    .fontDesign(.rounded)
                 Text("Team: \(player.team.abbreviation)")
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                    .fontDesign(.rounded)
             }
             Spacer()
-            Text("Details")
-                .fontDesign(.rounded)
+            Text(PlayersTabViewConstants.detailsText)
         }
     }
 }
