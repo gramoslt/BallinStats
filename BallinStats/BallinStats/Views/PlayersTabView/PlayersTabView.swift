@@ -12,34 +12,7 @@ struct PlayersTabView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(playersTabViewModel.players) { player in
-                    NavigationLink {
-                        PlayerDetailsView(player: player)
-                    } label: {
-                        HStack {
-                            Image(player.team.logoString)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 50)
-                            VStack(alignment: .leading) {
-                                Text(player.fullName)
-                                Text("Team: \(player.team.abbreviation)")
-                            }
-                            Spacer()
-                            Text("Details")
-                        }
-                    }
-                }
-            }
-            .preferredColorScheme(.dark)
-            .listStyle(.plain)
-            //            .background(Color(ColorString.backgroundColor))
-            .navigationBarTitle(TabViewConstants.playersLabel)
-            .searchable(
-                text: $playersTabViewModel.searchText,
-                prompt: "Search Player"
-            )
+            PlayersList(playersTabViewModel: playersTabViewModel)
         }
     }
 }
