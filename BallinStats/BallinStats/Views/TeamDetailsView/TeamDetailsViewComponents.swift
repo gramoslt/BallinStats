@@ -5,11 +5,58 @@
 //  Created by Gerardo Leal on 18/08/23.
 //
 
-import Foundation
 import SwiftUI
+
+struct TeamLogo: View {
+    let logoString: String
+
+    var body: some View {
+        Image(logoString)
+            .resizable()
+            .scaledToFit()
+            .frame(width: TeamDetailsViewConstants.logoWidth)
+    }
+}
+
+struct TeamAbbreviation: View {
+    let abbreviation: String
+
+    var body: some View {
+        HStack{
+            Text(abbreviation)
+                .font(.title)
+                .bold()
+            Spacer()
+        }
+        .padding(.horizontal)
+    }
+}
+
+struct TeamInfo: View {
+    let team: TeamDetails
+
+    var body: some View {
+        HStack (alignment: .lastTextBaseline){
+            VStack (alignment: .leading){
+                Text(team.city)
+                    .font(.title)
+                    .bold()
+                Text(team.conference)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+            }
+            Spacer()
+            Text(team.division)
+                .font(.title2)
+                .fontWeight(.semibold)
+        }
+        .padding()
+    }
+}
 
 struct GamesPlayedGrid: View {
     @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
+
     let columns = [
         GridItem(.adaptive(minimum: TeamDetailsViewConstants.columnMinimum))
     ]
@@ -45,7 +92,7 @@ struct GameRow: View {
 struct GameCell: View {
     var team: TeamDetails
     var score: Int
-    
+
     var body: some View {
         HStack {
             Image(team.logoString)

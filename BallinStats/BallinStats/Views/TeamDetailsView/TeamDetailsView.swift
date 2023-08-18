@@ -14,35 +14,12 @@ struct TeamDetailsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                HStack{
-                    Text(team.abbreviation)
-                        .font(.title)
-                        .bold()
-                    Spacer()
-                }
-                .padding(.horizontal)
-                
-                Image(team.logoString)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: TeamDetailsViewConstants.logoWidth)
-                
-                HStack (alignment: .lastTextBaseline){
-                    VStack (alignment: .leading){
-                        Text(team.city)
-                            .font(.title)
-                            .bold()
-                        Text(team.conference)
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                    }
-                    Spacer()
-                    Text(team.division)
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                }
-                .padding()
-                
+                TeamAbbreviation(abbreviation: team.abbreviation)
+
+                TeamLogo(logoString: team.logoString)
+
+                TeamInfo(team: team)
+
                 GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
             }
             .navigationTitle(team.fullName)
