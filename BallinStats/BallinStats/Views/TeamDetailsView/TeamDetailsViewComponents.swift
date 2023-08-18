@@ -66,7 +66,7 @@ struct GamesPlayedGrid: View {
             HStack{
                 Text(TeamDetailsViewConstants.lastGamesPlayedText)
                 Spacer()
-                Text("2022")
+                SeasonPicker(teamDetailsViewModel: teamDetailsViewModel)
             }
             LazyVGrid(columns: columns) {
                 ForEach(teamDetailsViewModel.games) { game in
@@ -98,12 +98,27 @@ struct GameCell: View {
             Image(team.logoString)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 20)
+                .frame(height: TeamDetailsViewConstants.gridLogoHeight)
             Text(team.abbreviation)
             Spacer()
             Text("\(score)")
+                .bold()
         }
         .padding()
         .border(.white)
+    }
+}
+
+struct SeasonPicker: View {
+    @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
+
+    var body: some View {
+        Picker("Season", selection: $teamDetailsViewModel.selectedYear) {
+            ForEach(1990 ..< 2023) { year in
+                Text("Season \(String(year))")
+                    .tag(year)
+            }
+        }
+        .pickerStyle(.menu)
     }
 }

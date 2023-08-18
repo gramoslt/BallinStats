@@ -7,21 +7,14 @@
 
 import Foundation
 
-enum Season: Int, CaseIterable, Identifiable {
-    var id: Self {
-      return self
-    }
-    case AllTeams
-    case Atlantic
-    case Central
-    case Southeast
-    case Northwest
-    case Pacific
-    case Southwest
-}
 
 @MainActor class TeamDetailsViewModel: ObservableObject {
     @Published var games: [Game] = gamesMock
+    @Published var selectedYear: Int = 2022 {
+        didSet {
+            print("Games from \(selectedYear) Season")
+        }
+    }
 }
 
 extension TeamDetailsViewModel {
