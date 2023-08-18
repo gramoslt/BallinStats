@@ -41,6 +41,6 @@ extension Player {
         heightFeet: 6,
         heightInches: 8,
         weightPounds: 250,
-        team: TeamDetails.mock
+        team: TeamDetails.mockLAL
     )
 }
