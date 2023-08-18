@@ -48,15 +48,9 @@ Thumbs.db
 *.mov
 *.wmv
 
-*.xcuserstate
-
 ## User settings
 xcuserdata/
-
-### Xcode Patch ###
-*.xcodeproj/*
-!*.xcodeproj/xcshareddata/
-/*.gcno
-**/xcshareddata/WorkspaceSettings.xcsettings
-!*.xcodeproj/xcshareddata/
+*.xcuserstate
+*.pbxproj
+WorkspaceSettings.xcsettings
 
