@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum Season: String, CaseIterable, Identifiable {
+enum Season: Int, CaseIterable, Identifiable {
     var id: Self {
       return self
     }
-    case AllTeams = "All Teams"
+    case AllTeams
     case Atlantic
     case Central
     case Southeast
@@ -21,5 +21,9 @@ enum Season: String, CaseIterable, Identifiable {
 }
 
 @MainActor class TeamDetailsViewModel: ObservableObject {
-    @Published var games: [String] = []
+    @Published var games: [Game] = gamesMock
+}
+
+extension TeamDetailsViewModel {
+    static let gamesMock = [Game.mock1, Game.mock2]
 }
