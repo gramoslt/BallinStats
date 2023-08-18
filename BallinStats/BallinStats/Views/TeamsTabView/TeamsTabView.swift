@@ -18,7 +18,7 @@ struct TeamsTabView: View {
                 TeamsDynamicGrid(teamsTabViewModel: teamsTabViewModel)
             }
             .navigationTitle(TabViewConstants.teamsLabel)
-            .background(Color(ColorString.backgroundColor))
+            .background(.customBackgroundColor)
             .preferredColorScheme(.dark)
         }
     }

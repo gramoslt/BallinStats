@@ -58,12 +58,12 @@ struct TeamLogoButton: View {
             }
             .padding(.vertical)
             .frame(maxWidth: .infinity)
-            .background(Color(ColorString.red))
+            .background(.customRed)
         }
         .clipShape(RoundedRectangle(cornerRadius: TeamsTabViewConstants.cornerRadius))
         .overlay(
             RoundedRectangle(cornerRadius: TeamsTabViewConstants.cornerRadius)
-                .stroke(Color(ColorString.yellowStroke))
+                .stroke(.customYellowStroke)
         )
         .padding(TeamsTabViewConstants.padding)
     }

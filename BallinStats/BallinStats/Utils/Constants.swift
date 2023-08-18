@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum ColorString {
-    public static let red = "RedAccentColor"
-    public static let yellowStroke = "StrokeColor"
-    public static let backgroundColor = "Dark-Blue-BackgroundColor"
-}
-
 enum TabViewConstants {
     public static let teamsLabel = "Teams"
     public static let playersLabel = "Players"
