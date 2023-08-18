@@ -23,6 +23,7 @@
 		E6A1E7BD2A8EB26D005C3C44 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7BC2A8EB26D005C3C44 /* Player.swift */; };
 		E6D7D0A02A8FF8DD007CD7AB /* TeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7D09F2A8FF8DD007CD7AB /* TeamDetailsViewModel.swift */; };
 		E6D7D0A22A8FFA11007CD7AB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7D0A12A8FFA11007CD7AB /* Game.swift */; };
+		E6D7D0A42A9001AE007CD7AB /* TeamDetailsViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E6A1E7BC2A8EB26D005C3C44 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E6D7D09F2A8FF8DD007CD7AB /* TeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewModel.swift; sourceTree = "<group>"; };
 		E6D7D0A12A8FFA11007CD7AB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewComponents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			children = (
 				E6A1E7B62A8EA397005C3C44 /* TeamDetailsView.swift */,
 				E6D7D09F2A8FF8DD007CD7AB /* TeamDetailsViewModel.swift */,
+				E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */,
 			);
 			path = TeamDetailsView;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D7D0A42A9001AE007CD7AB /* TeamDetailsViewComponents.swift in Sources */,
 				E6A1E7B42A8E9931005C3C44 /* TeamsTabComponents.swift in Sources */,
 				E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */,
 				E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */,

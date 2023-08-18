@@ -23,3 +23,10 @@ enum TeamsTabViewConstants {
     public static let cornerRadius = CGFloat(10)
     public static let padding = CGFloat(10)
 }
+
+enum TeamDetailsViewConstants {
+    public static let logoWidth = CGFloat(360)
+    public static let columnMinimum = CGFloat(300)
+    public static let lastGamesPlayedText = "Last 5 Games Played:"
+    
+}
