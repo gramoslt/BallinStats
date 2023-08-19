@@ -83,13 +83,13 @@ struct GameRow: View {
 
     var body: some View {
         HStack (spacing: 0){
-            GameCell(team: game.homeTeam, score: game.homeTeamScore)
-            GameCell(team: game.visitorTeam, score: game.visitorTeamScore)
+            HomeTeamCell(team: game.homeTeam, score: game.homeTeamScore)
+            VisitorTeamCell(team: game.visitorTeam, score: game.visitorTeamScore)
         }
     }
 }
 
-struct GameCell: View {
+struct HomeTeamCell: View {
     var team: TeamDetails
     var score: Int
 
@@ -102,7 +102,29 @@ struct GameCell: View {
             Text(team.abbreviation)
             Spacer()
             Text("\(score)")
+                .font(.title)
                 .bold()
+        }
+        .padding()
+        .border(.white)
+    }
+}
+
+struct VisitorTeamCell: View {
+    var team: TeamDetails
+    var score: Int
+
+    var body: some View {
+        HStack {
+            Text("\(score)")
+                .font(.title)
+                .bold()
+            Spacer()
+            Image(team.logoString)
+                .resizable()
+                .scaledToFit()
+                .frame(height: TeamDetailsViewConstants.gridLogoHeight)
+            Text(team.abbreviation)
         }
         .padding()
         .border(.white)
