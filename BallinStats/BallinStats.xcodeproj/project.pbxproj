@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E60670862A93D6FE004AD6FA /* EndpointBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670852A93D6FE004AD6FA /* EndpointBuilder.swift */; };
 		E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */; };
 		E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */; };
 		E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE792A8FBFF900E4C096 /* Colors.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E60670852A93D6FE004AD6FA /* EndpointBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EndpointBuilder.swift; path = BallinStats/Models/EndpointBuilder.swift; sourceTree = SOURCE_ROOT; };
 		E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabViewModel.swift; sourceTree = "<group>"; };
 		E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		E668BE792A8FBFF900E4C096 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		E68FDB132A8D5B0E00A9AE60 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E60670852A93D6FE004AD6FA /* EndpointBuilder.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				E6807D5E2A8DA324009B32AC /* TeamsTabView.swift in Sources */,
 				E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */,
 				E68FDB042A8D5A7D00A9AE60 /* BallinStatsApp.swift in Sources */,
+				E60670862A93D6FE004AD6FA /* EndpointBuilder.swift in Sources */,
 				E6A1E7B72A8EA397005C3C44 /* TeamDetailsView.swift in Sources */,
 				E6A1E7BD2A8EB26D005C3C44 /* Player.swift in Sources */,
 				E6807D602A8DA333009B32AC /* FollowingTabView.swift in Sources */,
