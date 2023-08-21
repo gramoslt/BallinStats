@@ -24,7 +24,7 @@ struct Game: Codable, Identifiable {
 }
 
 extension Game {
-    static let mock1 = Game(
+    static let mockLALvsBOS = Game(
         id: 100,
         homeTeam: TeamDetails.mockLAL,
         homeTeamScore: 100,
@@ -32,7 +32,7 @@ extension Game {
         visitorTeamScore: 98
     )
 
-    static let mock2 = Game(
+    static let mockLALvsATL = Game(
         id: 200,
         homeTeam: TeamDetails.mockLAL,
         homeTeamScore: 102,

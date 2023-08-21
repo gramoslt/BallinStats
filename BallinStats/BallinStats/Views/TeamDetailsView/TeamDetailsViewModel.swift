@@ -18,5 +18,5 @@ import Foundation
 }
 
 extension TeamDetailsViewModel {
-    static let gamesMock = [Game.mock1, Game.mock2]
+    static let gamesMock = [Game.mockLALvsBOS, Game.mockLALvsATL]
 }
