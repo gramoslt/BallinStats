@@ -16,4 +16,25 @@ class EndpointBuilder {
         self.components.host = "www.balldontlie.io"
         self.components.path = "api/v1"
     }
+
+    func getAllTeamsURL(page: Int) -> URL? {
+        components.path += Self.teamsPath
+        components.queryItems = [
+            URLQueryItem(name: "page", value: "\(page)")
+        ]
+        return components.url
+    }
+
+    func getAllPlayersURL(page: Int) -> URL? {
+        components.path += Self.playersPath
+        components.queryItems = [
+            URLQueryItem(name: "page", value: "\(page)")
+        ]
+        return components.url
+    }
+}
+
+extension EndpointBuilder {
+    static let teamsPath: String = "/teams"
+    static let playersPath: String = "/players"
 }
