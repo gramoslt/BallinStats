@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct TeamDetailsView: View {
-    var team: TeamDetails
-    @StateObject var teamDetailsViewModel = TeamDetailsViewModel()
+    @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                TeamAbbreviation(abbreviation: team.abbreviation)
+                TeamAbbreviation(abbreviation: teamDetailsViewModel.team.abbreviation)
 
-                TeamLogo(logoString: team.logoString)
+                TeamLogo(logoString: teamDetailsViewModel.team.logoString)
 
-                TeamInfo(team: team)
+                TeamInfo(team: teamDetailsViewModel.team)
 
                 GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
             }
-            .navigationTitle(team.fullName)
-            .background(.customBackgroundColor)
+            .navigationTitle(teamDetailsViewModel.team.fullName)
+            .background(teamDetailsViewModel.backgroundColor)
         }
         .preferredColorScheme(.dark)
     }
@@ -31,6 +30,8 @@ struct TeamDetailsView: View {
 
 struct TeamDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamDetailsView(team: TeamDetails.mockLAL)
+        TeamDetailsView(
+            teamDetailsViewModel: TeamDetailsViewModel(team: TeamDetails.mockLAL)
+        )
     }
 }
