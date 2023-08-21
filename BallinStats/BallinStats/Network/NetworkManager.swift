@@ -13,7 +13,7 @@ class NetworkManager {
     
     func fetchData<T: Codable>(endpoint: URL?, type: T.Type, completion: @escaping (T?) -> Void) {
         if let endpoint = endpoint {
-            var urlRequest = URLRequest(url: endpoint)
+            let urlRequest = URLRequest(url: endpoint)
             fetch(with: urlRequest, type: T.self, completion: completion)
         }
     }
