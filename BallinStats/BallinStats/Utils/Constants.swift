@@ -29,6 +29,8 @@ enum TeamDetailsViewConstants {
     public static let columnMinimum = CGFloat(300)
     public static let lastGamesPlayedText = "Last Games Played:"
     public static let gridLogoHeight = CGFloat(20)
+    public static let initialYear = 1990
+    public static let finalYear = 2023
 }
 
 enum PlayersTabViewConstants {
