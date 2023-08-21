@@ -30,3 +30,8 @@ enum TeamDetailsViewConstants {
     public static let lastGamesPlayedText = "Last Games Played:"
     public static let gridLogoHeight = CGFloat(20)
 }
+
+enum PlayersTabViewConstants {
+    public static let searchPrompt = "Search Player"
+    public static let detailsText = "Details"
+}

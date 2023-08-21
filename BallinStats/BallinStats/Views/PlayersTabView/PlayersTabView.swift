@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct PlayersTabView: View {
+    @ObservedObject var playersTabViewModel: PlayersTabViewModel
+
     var body: some View {
-        Text("Players View")
+        NavigationStack {
+            PlayersList(playersTabViewModel: playersTabViewModel)
+        }
     }
 }
 
 struct PlayersTabView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayersTabView()
+        PlayersTabView(playersTabViewModel: PlayersTabViewModel())
     }
 }
