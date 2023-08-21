@@ -6,17 +6,27 @@
 //
 
 import Foundation
+import SwiftUI
 
 
 @MainActor class TeamDetailsViewModel: ObservableObject {
     @Published var games: [Game] = gamesMock
+    var team: TeamDetails
     @Published var selectedYear: Int = 2022 {
         didSet {
             print("Games from \(selectedYear) Season")
         }
     }
+
+    init(team: TeamDetails) {
+        self.team = team
+    }
 }
 
 extension TeamDetailsViewModel {
     static let gamesMock = [Game.mockLALvsBOS, Game.mockLALvsATL]
+
+    var backgroundColor: Color {
+        Color("\(self.team.abbreviation)Color")
+    }
 }
