@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */; };
+		E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */; };
 		E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE792A8FBFF900E4C096 /* Colors.swift */; };
 		E67A2D5D2A93B2F300BA6D39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67A2D5C2A93B2F300BA6D39 /* NetworkManager.swift */; };
 		E67A2D5F2A93B82B00BA6D39 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67A2D5E2A93B82B00BA6D39 /* Decoder.swift */; };
+		E668BE7C2A8FC87900E4C096 /* PlayersTabComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE7B2A8FC87900E4C096 /* PlayersTabComponents.swift */; };
 		E6807D5A2A8DA069009B32AC /* TabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D592A8DA069009B32AC /* TabNavigationView.swift */; };
 		E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */; };
 		E6807D5E2A8DA324009B32AC /* TeamsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */; };
@@ -22,6 +24,7 @@
 		E68FDB0B2A8D5A7F00A9AE60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E68FDB0A2A8D5A7F00A9AE60 /* Preview Assets.xcassets */; };
 		E6A1E7B42A8E9931005C3C44 /* TeamsTabComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7B32A8E9931005C3C44 /* TeamsTabComponents.swift */; };
 		E6A1E7B72A8EA397005C3C44 /* TeamDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7B62A8EA397005C3C44 /* TeamDetailsView.swift */; };
+		E6A1E7B92A8EACD0005C3C44 /* PlayersTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7B82A8EACD0005C3C44 /* PlayersTabViewModel.swift */; };
 		E6A1E7BD2A8EB26D005C3C44 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7BC2A8EB26D005C3C44 /* Player.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,9 @@
 		E668BE792A8FBFF900E4C096 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E67A2D5C2A93B2F300BA6D39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E67A2D5E2A93B82B00BA6D39 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
+		E668BE792A8FBFF900E4C096 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E668BE7B2A8FC87900E4C096 /* PlayersTabComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTabComponents.swift; sourceTree = "<group>"; };
 		E6807D592A8DA069009B32AC /* TabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationView.swift; sourceTree = "<group>"; };
 		E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTabView.swift; sourceTree = "<group>"; };
 		E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabView.swift; sourceTree = "<group>"; };
@@ -42,6 +48,7 @@
 		E68FDB0A2A8D5A7F00A9AE60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6A1E7B32A8E9931005C3C44 /* TeamsTabComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabComponents.swift; sourceTree = "<group>"; };
 		E6A1E7B62A8EA397005C3C44 /* TeamDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsView.swift; sourceTree = "<group>"; };
+		E6A1E7B82A8EACD0005C3C44 /* PlayersTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTabViewModel.swift; sourceTree = "<group>"; };
 		E6A1E7BC2A8EB26D005C3C44 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,10 +63,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E668BE762A8EBC1E00E4C096 /* PlayerDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */,
+			);
+			path = PlayerDetailsView;
+			sourceTree = "<group>";
+		};
 		E6807D612A8DA38B009B32AC /* PlayersTabView */ = {
 			isa = PBXGroup;
 			children = (
 				E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */,
+				E6A1E7B82A8EACD0005C3C44 /* PlayersTabViewModel.swift */,
+				E668BE7B2A8FC87900E4C096 /* PlayersTabComponents.swift */,
 			);
 			path = PlayersTabView;
 			sourceTree = "<group>";
@@ -124,6 +141,7 @@
 		E68FDB112A8D5AB900A9AE60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E668BE762A8EBC1E00E4C096 /* PlayerDetailsView */,
 				E6A1E7B52A8EA382005C3C44 /* TeamDetailsView */,
 				E6807D622A8DA3B5009B32AC /* TeamsTabView */,
 				E6807D612A8DA38B009B32AC /* PlayersTabView */,
@@ -269,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */,
 				E6A1E7B42A8E9931005C3C44 /* TeamsTabComponents.swift in Sources */,
 				E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */,
 				E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */,
@@ -282,7 +301,9 @@
 				E6A1E7BD2A8EB26D005C3C44 /* Player.swift in Sources */,
 				E6807D602A8DA333009B32AC /* FollowingTabView.swift in Sources */,
 				E6807D5A2A8DA069009B32AC /* TabNavigationView.swift in Sources */,
+				E668BE7C2A8FC87900E4C096 /* PlayersTabComponents.swift in Sources */,
 				E6807D652A8DAB3C009B32AC /* Constants.swift in Sources */,
+				E6A1E7B92A8EACD0005C3C44 /* PlayersTabViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

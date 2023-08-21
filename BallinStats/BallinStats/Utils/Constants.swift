@@ -23,3 +23,8 @@ enum TeamsTabViewConstants {
     public static let cornerRadius = CGFloat(10)
     public static let padding = CGFloat(10)
 }
+
+enum PlayersTabViewConstants {
+    public static let searchPrompt = "Search Player"
+    public static let detailsText = "Details"
+}
