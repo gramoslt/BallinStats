@@ -25,11 +25,14 @@ class EndpointBuilder {
         return components.url
     }
 
-    func getAllPlayersURL(page: Int) -> URL? {
+    func getAllPlayersURL(page: Int, searchText: String?) -> URL? {
         components.path += Self.playersPath
         components.queryItems = [
             URLQueryItem(name: "page", value: "\(page)")
         ]
+        if let search = searchText {
+            components.queryItems?.append(URLQueryItem(name: "search", value: search))
+        }
         return components.url
     }
 }
