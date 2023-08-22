@@ -136,7 +136,7 @@ struct SeasonPicker: View {
 
     var body: some View {
         Picker("Season", selection: $teamDetailsViewModel.selectedYear) {
-            ForEach(TeamDetailsViewConstants.initialYear ..< TeamDetailsViewConstants.finalYear) { year in
+            ForEach(1990 ..< 2023) { year in
                 Text("Season \(String(year))")
                     .tag(year)
             }
