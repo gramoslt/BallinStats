@@ -9,8 +9,23 @@ import SwiftUI
 
 struct TeamDetailsView: View {
     var team: TeamDetails
+    @StateObject var teamDetailsViewModel = TeamDetailsViewModel()
+
     var body: some View {
-        Text(team.fullName)
+        NavigationStack {
+            ScrollView {
+                TeamAbbreviation(abbreviation: team.abbreviation)
+
+                TeamLogo(logoString: team.logoString)
+
+                TeamInfo(team: team)
+
+                GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
+            }
+            .navigationTitle(team.fullName)
+            .background(.customBackgroundColor)
+        }
+        .preferredColorScheme(.dark)
     }
 }
 
