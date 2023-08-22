@@ -16,11 +16,10 @@ class EndpointBuilder {
         self.components = URLComponents()
         self.components.scheme = "https"
         self.components.host = "www.balldontlie.io"
-        self.components.path = "/api/v1"
     }
 
     func getAllTeamsURL(page: Int) -> URL? {
-        components.path += Self.teamsPath
+        components.path = Self.teamsPath
         components.queryItems = [
             URLQueryItem(name: "page", value: "\(page)")
         ]
@@ -28,7 +27,7 @@ class EndpointBuilder {
     }
 
     func getAllPlayersURL(page: Int, searchText: String?) -> URL? {
-        components.path += Self.playersPath
+        components.path = Self.playersPath
         components.queryItems = [
             URLQueryItem(name: "page", value: "\(page)")
         ]
@@ -40,6 +39,6 @@ class EndpointBuilder {
 }
 
 extension EndpointBuilder {
-    static let teamsPath: String = "/teams"
-    static let playersPath: String = "/players"
+    static let teamsPath: String = "/api/v1/teams"
+    static let playersPath: String = "/api/v1/players"
 }
