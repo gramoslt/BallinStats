@@ -10,7 +10,9 @@ import Foundation
 class EndpointBuilder {
     private var components: URLComponents
 
-    init() {
+    static let shared: EndpointBuilder = EndpointBuilder()
+
+    private init() {
         self.components = URLComponents()
         self.components.scheme = "https"
         self.components.host = "www.balldontlie.io"

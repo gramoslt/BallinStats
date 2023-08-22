@@ -10,7 +10,9 @@ import Foundation
 class NetworkManager {
     private let session = URLSession.shared
     private let decoder = Decoder()
-    
+
+    static let shared: NetworkManager = NetworkManager()
+
     func fetchData<T: Codable>(endpoint: URL?, type: T.Type, completion: @escaping (T?) -> Void) {
         if let endpoint = endpoint {
             let urlRequest = URLRequest(url: endpoint)
@@ -32,7 +34,6 @@ class NetworkManager {
             } catch let error {
                 print("NetworkManager: Fetching error: \(error)")
                 completion(nil)
-                
             }
         }
         task.resume()
