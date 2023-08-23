@@ -67,10 +67,6 @@ import SwiftUI
     }
 
     func fetchPlayers(for searchText: String) {
-        // Only load when search term isnt empty
-        guard !searchText.isEmpty else {
-            return
-        }
 
         // Only load when you are not already loading
         guard state == .good else {
