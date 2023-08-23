@@ -44,3 +44,17 @@ extension Player {
         team: TeamDetails.mockLAL
     )
 }
+
+struct PlayerStats: Codable, Identifiable{
+    let id: Int
+    let pts: Float
+    let reb: Float
+    let ast: Float
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "player_id"
+        case pts
+        case reb
+        case ast
+    }
+}
