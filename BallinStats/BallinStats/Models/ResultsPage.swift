@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResultsPage<T:Decodable>: Decodable {
+struct ResultsPage<T:Codable>: Codable {
     let data: [T]
     let meta: PageMetaData
 }

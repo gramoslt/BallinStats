@@ -15,9 +15,9 @@ struct Player: Codable, Identifiable {
         "\(firstName) \(lastName)"
     }
     let position: String
-    let heightFeet: Int
-    let heightInches: Int
-    let weightPounds: Int
+    let heightFeet: Int?
+    let heightInches: Int?
+    let weightPounds: Int?
     let team: TeamDetails
 
     enum CodingKeys: String, CodingKey {
