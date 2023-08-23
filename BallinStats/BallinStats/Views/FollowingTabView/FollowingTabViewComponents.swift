@@ -47,6 +47,9 @@ struct TeamRow: View {
                 Text(team.fullName)
                     .font(.title3)
                     .bold()
+                Text(team.abbreviation)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
             }
             Spacer()
             Text(PlayersTabViewConstants.detailsText)
