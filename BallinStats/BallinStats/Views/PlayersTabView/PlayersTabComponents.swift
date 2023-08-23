@@ -15,7 +15,7 @@ struct PlayersList: View {
         List {
             ForEach(playersTabViewModel.players) { player in
                 NavigationLink {
-                    PlayerDetailsView(player: player)
+                    PlayerDetailsView(playerDetailsViewModel: PlayerDetailsViewModel(player: player))
                 } label: {
                     PlayerRow(player: player)
                 }
