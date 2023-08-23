@@ -18,7 +18,7 @@ import SwiftUI
     }
 
     @Published var searchText: String = ""
-    @Published var players: [Player] = playersMock
+    @Published var players: [Player] = []
     @Published var state: BrowsingState = .good {
         didSet {
             print("state changed to: \(state)")
