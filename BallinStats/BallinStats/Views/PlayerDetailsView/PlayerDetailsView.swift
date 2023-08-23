@@ -8,15 +8,56 @@
 import SwiftUI
 
 struct PlayerDetailsView: View {
-    var player: Player
+    @ObservedObject var playerDetailsViewModel: PlayerDetailsViewModel
 
     var body: some View {
-        Text(player.fullName)
+        NavigationStack {
+            ScrollView {
+                TeamLogo(logoString: playerDetailsViewModel.player.team.logoString)
+                
+                PlayerPositionText(playerDetailsViewModel: playerDetailsViewModel)
+                
+                VStack {
+                    VStack {
+                        HStack {
+                            Text("Stats")
+                                .bold()
+                            Spacer()
+                        }
+
+                        HStack (spacing: 0){
+                            StatsGridCell(statTitle: "PPG", statValue: "\(28)")
+                            StatsGridCell(statTitle: "RPG", statValue: "\(8.3)")
+                            StatsGridCell(statTitle: "APG", statValue: "\(4.2)")
+                        }
+                    }
+                    
+                    VStack {
+                        HStack {
+                            Text("Measurements")
+                                .bold()
+                            Spacer()
+                        }
+
+                        HStack (spacing: 0){
+                            StatsGridCell(statTitle: "Height (feet)", statValue: playerDetailsViewModel.heightFeet)
+                            StatsGridCell(statTitle: "Height (in)", statValue: playerDetailsViewModel.heightInches)
+                            StatsGridCell(statTitle: "Weight", statValue: playerDetailsViewModel.weightPounds)
+                        }
+                    }
+                }
+                .padding()
+            }
+            .frame(maxWidth: .infinity)
+            .background(playerDetailsViewModel.backgroundColor)
+            .navigationTitle(playerDetailsViewModel.player.fullName)
+        }
+        .preferredColorScheme(.dark)
     }
 }
 
 struct PlayerDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailsView(player: Player.mock)
+        PlayerDetailsView(playerDetailsViewModel: PlayerDetailsViewModel(player: Player.mock))
     }
 }
