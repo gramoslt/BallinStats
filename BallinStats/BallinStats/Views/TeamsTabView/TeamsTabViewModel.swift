@@ -21,13 +21,24 @@ enum Division: String, CaseIterable, Identifiable {
 }
 
 @MainActor class TeamsTabViewModel: ObservableObject {
-    @Published var teams: [TeamDetails] = teamsMock
+    @Published var teams: [TeamDetails] = []
     @Published var selectedFilter: Division = .AllTeams
     var filteredTeams: [TeamDetails] {
         if selectedFilter == .AllTeams {
             return teams
         } else {
             return self.teams.filter({$0.division == selectedFilter.rawValue})
+        }
+    }
+
+    func fetchTeams(withPage page: Int) {
+        NetworkManager.shared.fetchData(
+            endpoint: EndpointBuilder.shared.getAllTeamsURL(page: page),
+            type: ResultsPage<TeamDetails>.self
+        ) { result in
+            if let result = result {
+                self.teams = result.data
+            }
         }
     }
 }

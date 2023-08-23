@@ -19,6 +19,9 @@ struct DivisionPicker: View {
             }
             Spacer()
         }
+        .onAppear {
+            teamsTabViewModel.fetchTeams(withPage: 1)
+        }
     }
 }
 
