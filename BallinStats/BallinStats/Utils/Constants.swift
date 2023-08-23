@@ -35,3 +35,7 @@ enum PlayersTabViewConstants {
     public static let searchPrompt = "Search Player"
     public static let detailsText = "Details"
 }
+
+enum PlayerDetailsViewConstants {
+    public static let statsGridCellWidth = CGFloat(120)
+}
