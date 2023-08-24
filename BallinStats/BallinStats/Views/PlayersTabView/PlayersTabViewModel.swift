@@ -52,11 +52,11 @@ import SwiftUI
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] term in
-                self?.players = []  // empty the movies array when you change your searchTerm
+                self?.players = []  // empty the players array when you change your searchTerm
                 self?.totalPages = 1  // reestablish total pages to 1
                 self?.currentPage = 1  // return to page 1 of results
                 self?.state = .good  // reset state to good
-                self?.fetchPlayers(for: term) // start a fetchmovies when the searchterm changes
+                self?.fetchPlayers(for: term) // start a fetchPlayers when the searchterm changes
             }.store(in: &subscriptions)
     }
     
