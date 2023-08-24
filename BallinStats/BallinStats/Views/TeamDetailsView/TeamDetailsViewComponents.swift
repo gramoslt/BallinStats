@@ -106,7 +106,7 @@ struct HomeTeamCell: View {
                 .bold()
         }
         .padding()
-        .border(.white)
+        .border(Color.accentColor)
     }
 }
 
@@ -127,7 +127,7 @@ struct VisitorTeamCell: View {
             Text(team.abbreviation)
         }
         .padding()
-        .border(.white)
+        .border(Color.accentColor)
     }
 }
 
