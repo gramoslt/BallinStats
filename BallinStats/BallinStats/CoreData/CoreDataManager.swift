@@ -16,7 +16,6 @@ class CoreDataManager {
 
     static let shared : CoreDataManager = {
         let coreDataManager = CoreDataManager(modelName: "BallinStats")
-        coreDataManager.load()
         return coreDataManager
     }()
 
@@ -37,7 +36,7 @@ class CoreDataManager {
 
 extension CoreDataManager {
     func saveTeam(team: TeamDetails) { // this is the function that saves into the DB
-        let tempTeam = TeamDetails(context: viewContext)
+        let tempTeam = Team(context: viewContext)
         tempTeam.id = Int32(team.id)
         tempTeam.abbreviation = team.abbreviation
         tempTeam.city = team.city
@@ -49,7 +48,6 @@ extension CoreDataManager {
 
         do {
             try viewContext.save()
-            
         } catch let error {
             fatalError(String(describing: error.localizedDescription))
         }

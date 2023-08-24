@@ -12,6 +12,9 @@ struct BallinStatsApp: App {
     var body: some Scene {
         WindowGroup {
             TabNavigationView()
+                .onAppear{
+                    CoreDataManager.shared.load()
+                }
         }
     }
 }
