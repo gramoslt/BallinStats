@@ -10,16 +10,33 @@ import SwiftUI
 
 
 @MainActor class TeamDetailsViewModel: ObservableObject {
-    @Published var games: [Game] = gamesMock
+    @Published var games: [Game] = []
     var team: TeamDetails
-    @Published var selectedYear: Int = 2022 {
+    @Published var selectedYear: Int {
         didSet {
-            print("Games from \(selectedYear) Season")
+            games.removeAll()
+            fetchFiveGames()
         }
     }
 
     init(team: TeamDetails) {
+        self.selectedYear = 2022
         self.team = team
+    }
+
+    func fetchFiveGames() {
+        NetworkManager.shared.fetchData(
+            endpoint: EndpointBuilder.shared.getGamesURL(season: selectedYear, teamId: team.id),
+            type: ResultsPage<Game>.self
+        ) { result in
+            if let result = result {
+                if result.data.count < 5{
+                    self.games = result.data
+                } else {
+                    self.games = Array(result.data[0..<5])
+                }
+            }
+        }
     }
 }
 

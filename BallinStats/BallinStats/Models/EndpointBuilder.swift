@@ -40,7 +40,7 @@ class EndpointBuilder {
     func getGamesURL(season: Int, teamId: Int) -> URL? {
         components.path = Self.gamesPath
         components.queryItems = [
-            URLQueryItem(name: "seasons", value: "\(season)"),
+            URLQueryItem(name: "seasons[]", value: "\(season)"),
             URLQueryItem(name: "team_ids[]", value: "\(teamId)")
         ]
         return components.url
