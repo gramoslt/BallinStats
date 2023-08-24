@@ -53,11 +53,11 @@ struct TeamLogoButton: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: TeamsTabViewConstants.logoWidth, height: TeamsTabViewConstants.logoHeight)
-            
+                .padding(.top)
+
             VStack {
                 Text(team.fullName)
                     .font(.headline)
-                    .foregroundColor(.white)
             }
             .padding(.vertical)
             .frame(maxWidth: .infinity)

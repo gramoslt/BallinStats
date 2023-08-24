@@ -23,7 +23,6 @@ struct PlayersList: View {
             .listRowBackground(Color.customBackgroundColor)
             .listRowSeparatorTint(.customYellowStroke)
         }
-        .preferredColorScheme(.dark)
         .listStyle(.plain)
         .background(.customBackgroundColor)
         .navigationBarTitle(TabViewConstants.playersLabel)
