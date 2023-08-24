@@ -52,11 +52,12 @@ import SwiftUI
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
             .sink { [weak self] term in
-                self?.players = []  // empty the players array when you change your searchTerm
-                self?.totalPages = 1  // reestablish total pages to 1
-                self?.currentPage = 1  // return to page 1 of results
-                self?.state = .good  // reset state to good
-                self?.fetchPlayers(for: term) // start a fetchPlayers when the searchterm changes
+                guard let strongSelf = self else { return }
+                strongSelf.players = []  // empty the players array when you change your searchTerm
+                strongSelf.totalPages = 1  // reestablish total pages to 1
+                strongSelf.currentPage = 1  // return to page 1 of results
+                strongSelf.state = .good  // reset state to good
+                strongSelf.fetchPlayers(for: term) // start a fetchPlayers when the searchterm changes
             }.store(in: &subscriptions)
     }
     
