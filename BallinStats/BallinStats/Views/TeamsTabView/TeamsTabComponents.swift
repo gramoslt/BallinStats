@@ -58,6 +58,7 @@ struct TeamLogoButton: View {
             VStack {
                 Text(team.fullName)
                     .font(.headline)
+                    .foregroundColor(.redText)
             }
             .padding(.vertical)
             .frame(maxWidth: .infinity)
