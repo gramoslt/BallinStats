@@ -22,6 +22,26 @@ struct PlayerPositionText: View {
     }
 }
 
+struct PlayerMeasurementsTable: View {
+    @ObservedObject var playerDetailsViewModel: PlayerDetailsViewModel
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Measurements")
+                    .bold()
+                Spacer()
+            }
+            
+            HStack (spacing: 0){
+                StatsGridCell(statTitle: "Height (feet)", statValue: playerDetailsViewModel.heightFeet)
+                StatsGridCell(statTitle: "Height (in)", statValue: playerDetailsViewModel.heightInches)
+                StatsGridCell(statTitle: "Weight", statValue: playerDetailsViewModel.weightPounds)
+            }
+        }
+    }
+}
+
 struct StatsGridCell: View {
     var statTitle: String
     var statValue: String
@@ -34,7 +54,8 @@ struct StatsGridCell: View {
                 .bold()
         }
         .padding()
-        .frame(maxWidth: PlayerDetailsViewConstants.statsGridCellWidth)
-        .border(.white)
+        .frame(maxWidth: PlayerDetailsViewConstants.statsGridCellWidth, maxHeight: PlayerDetailsViewConstants.statsGridCellHeight)
+        .border(Color.accentColor)
     }
 }
+

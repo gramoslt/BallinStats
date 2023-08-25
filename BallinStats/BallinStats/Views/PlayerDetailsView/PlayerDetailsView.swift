@@ -32,19 +32,7 @@ struct PlayerDetailsView: View {
                         }
                     }
                     
-                    VStack {
-                        HStack {
-                            Text("Measurements")
-                                .bold()
-                            Spacer()
-                        }
-
-                        HStack (spacing: 0){
-                            StatsGridCell(statTitle: "Height (feet)", statValue: playerDetailsViewModel.heightFeet)
-                            StatsGridCell(statTitle: "Height (in)", statValue: playerDetailsViewModel.heightInches)
-                            StatsGridCell(statTitle: "Weight", statValue: playerDetailsViewModel.weightPounds)
-                        }
-                    }
+                    PlayerMeasurementsTable(playerDetailsViewModel: playerDetailsViewModel)
                 }
                 .padding()
             }
@@ -52,7 +40,6 @@ struct PlayerDetailsView: View {
             .background(playerDetailsViewModel.backgroundColor)
             .navigationTitle(playerDetailsViewModel.player.fullName)
         }
-        .preferredColorScheme(.dark)
     }
 }
 
