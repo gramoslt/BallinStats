@@ -14,6 +14,9 @@ import SwiftUI
     init(player: Player) {
         self.player = player
     }
+    @Published var ppg: Float = 0
+    @Published var rpg: Float = 0
+    @Published var apg: Float = 0
     var heightFeet: String {
         if let height = self.player.heightFeet {
             return "\(height)"
@@ -31,6 +34,21 @@ import SwiftUI
             return "\(height)"
         }
         return "N/A"
+    }
+
+    func fetchPlayerStats() {
+        NetworkManager.shared.fetchData(
+            endpoint: EndpointBuilder.shared.getPlayerSeasonAveragesURL(season: nil, playerId: player.id),
+            type: ResultsPage<PlayerStats>.self
+        ) { result in
+            if let result = result {
+                if !result.data.isEmpty {
+                    self.ppg = result.data[0].pts
+                    self.rpg = result.data[0].reb
+                    self.apg = result.data[0].ast
+                }
+            }
+        }
     }
 }
 

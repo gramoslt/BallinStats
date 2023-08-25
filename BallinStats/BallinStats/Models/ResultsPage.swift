@@ -9,5 +9,5 @@ import Foundation
 
 struct ResultsPage<T:Codable>: Codable {
     let data: [T]
-    let meta: PageMetaData
+    let meta: PageMetaData?
 }
