@@ -15,9 +15,9 @@ struct Player: Codable, Identifiable {
         "\(firstName) \(lastName)"
     }
     let position: String
-    let heightFeet: Int
-    let heightInches: Int
-    let weightPounds: Int
+    let heightFeet: Float?
+    let heightInches: Float?
+    let weightPounds: Float?
     let team: TeamDetails
 
     enum CodingKeys: String, CodingKey {
@@ -43,4 +43,18 @@ extension Player {
         weightPounds: 250,
         team: TeamDetails.mockLAL
     )
+}
+
+struct PlayerStats: Codable, Identifiable{
+    let id: Int
+    let pts: Float
+    let reb: Float
+    let ast: Float
+
+    enum CodingKeys: String, CodingKey {
+        case id = "player_id"
+        case pts
+        case reb
+        case ast
+    }
 }

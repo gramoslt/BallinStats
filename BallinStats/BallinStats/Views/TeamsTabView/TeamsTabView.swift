@@ -19,7 +19,6 @@ struct TeamsTabView: View {
             }
             .navigationTitle(TabViewConstants.teamsLabel)
             .background(.customBackgroundColor)
-            .preferredColorScheme(.dark)
         }
     }
 }

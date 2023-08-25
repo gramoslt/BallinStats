@@ -41,5 +41,7 @@ struct TabNavigationView: View {
 struct TabNavigationView_Previews: PreviewProvider {
     static var previews: some View {
         TabNavigationView()
+        TabNavigationView()
+            .preferredColorScheme(.dark)
     }
 }
