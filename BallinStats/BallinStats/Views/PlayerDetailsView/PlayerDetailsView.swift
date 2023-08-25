@@ -24,11 +24,14 @@ struct PlayerDetailsView: View {
                                 .bold()
                             Spacer()
                         }
+                        .onAppear {
+                            playerDetailsViewModel.fetchPlayerStats()
+                        }
 
                         HStack (spacing: 0){
-                            StatsGridCell(statTitle: "PPG", statValue: "\(28)")
-                            StatsGridCell(statTitle: "RPG", statValue: "\(8.3)")
-                            StatsGridCell(statTitle: "APG", statValue: "\(4.2)")
+                            StatsGridCell(statTitle: "PPG", statValue: "\(playerDetailsViewModel.ppg)")
+                            StatsGridCell(statTitle: "RPG", statValue: "\(playerDetailsViewModel.rpg)")
+                            StatsGridCell(statTitle: "APG", statValue: "\(playerDetailsViewModel.apg)")
                         }
                     }
                     
