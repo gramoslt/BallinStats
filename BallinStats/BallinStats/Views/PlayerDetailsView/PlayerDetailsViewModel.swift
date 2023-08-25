@@ -15,13 +15,22 @@ import SwiftUI
         self.player = player
     }
     var heightFeet: String {
-        "\(self.player.heightFeet)" ?? "N/A"
+        if let height = self.player.heightFeet {
+            return "\(height)"
+        }
+        return "N/A"
     }
     var weightPounds: String {
-        "\(self.player.weightPounds)" ?? "N/A"
+        if let weight = self.player.weightPounds {
+            return "\(weight)"
+        }
+        return "N/A"
     }
     var heightInches: String {
-        "\(self.player.heightInches)" ?? "N/A"
+        if let height = self.player.heightInches {
+            return "\(height)"
+        }
+        return "N/A"
     }
 }
 
