@@ -44,7 +44,7 @@ struct PlayerRow: View {
             Image(player.team.logoString)
                 .resizable()
                 .scaledToFit()
-                .frame(height: 40)
+                .frame(height: ListRowConstants.logoHeight)
             
             VStack(alignment: .leading) {
                 Text(player.fullName)

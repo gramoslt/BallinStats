@@ -12,6 +12,8 @@
 		E60670862A93D6FE004AD6FA /* EndpointBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670852A93D6FE004AD6FA /* EndpointBuilder.swift */; };
 		E606708C2A968CB0004AD6FA /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606708B2A968CB0004AD6FA /* PlayerDetailsViewModel.swift */; };
 		E606708E2A96958C004AD6FA /* PlayerDetailsViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606708D2A96958C004AD6FA /* PlayerDetailsViewComponents.swift */; };
+		E60670882A9683CC004AD6FA /* FollowingTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670872A9683CC004AD6FA /* FollowingTabViewModel.swift */; };
+		E606708A2A968763004AD6FA /* FollowingTabViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670892A968763004AD6FA /* FollowingTabViewComponents.swift */; };
 		E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */; };
 		E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */; };
 		E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE792A8FBFF900E4C096 /* Colors.swift */; };
@@ -42,6 +44,8 @@
 		E60670852A93D6FE004AD6FA /* EndpointBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EndpointBuilder.swift; path = BallinStats/Models/EndpointBuilder.swift; sourceTree = SOURCE_ROOT; };
 		E606708B2A968CB0004AD6FA /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
 		E606708D2A96958C004AD6FA /* PlayerDetailsViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewComponents.swift; sourceTree = "<group>"; };
+		E60670872A9683CC004AD6FA /* FollowingTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTabViewModel.swift; sourceTree = "<group>"; };
+		E60670892A968763004AD6FA /* FollowingTabViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTabViewComponents.swift; sourceTree = "<group>"; };
 		E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabViewModel.swift; sourceTree = "<group>"; };
 		E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		E668BE792A8FBFF900E4C096 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				E6807D5F2A8DA333009B32AC /* FollowingTabView.swift */,
+				E60670872A9683CC004AD6FA /* FollowingTabViewModel.swift */,
+				E60670892A968763004AD6FA /* FollowingTabViewComponents.swift */,
 			);
 			path = FollowingTabView;
 			sourceTree = "<group>";
@@ -312,6 +318,7 @@
 			files = (
 				E6D7D0A42A9001AE007CD7AB /* TeamDetailsViewComponents.swift in Sources */,
 				E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */,
+				E60670882A9683CC004AD6FA /* FollowingTabViewModel.swift in Sources */,
 				E6A1E7B42A8E9931005C3C44 /* TeamsTabComponents.swift in Sources */,
 				E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */,
 				E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */,
@@ -334,6 +341,7 @@
 				E668BE7C2A8FC87900E4C096 /* PlayersTabComponents.swift in Sources */,
 				E6807D652A8DAB3C009B32AC /* Constants.swift in Sources */,
 				E606708C2A968CB0004AD6FA /* PlayerDetailsViewModel.swift in Sources */,
+				E606708A2A968763004AD6FA /* FollowingTabViewComponents.swift in Sources */,
 				E6A1E7B92A8EACD0005C3C44 /* PlayersTabViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,7 @@ enum TabViewConstants {
     public static let followingLabel = "Following"
     public static let teamsIconString = "basketball.fill"
     public static let playersIconString = "figure.basketball"
-    public static let followingIconString = "star.fill"
+    public static let followingIconString = "heart.fill"
 }
 
 enum TeamsTabViewConstants {
@@ -39,4 +39,8 @@ enum PlayersTabViewConstants {
 enum PlayerDetailsViewConstants {
     public static let statsGridCellWidth = CGFloat(120)
     public static let statsGridCellHeight = CGFloat(80)
+}
+
+enum ListRowConstants {
+    public static let logoHeight = CGFloat(40)
 }
