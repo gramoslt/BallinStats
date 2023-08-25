@@ -22,6 +22,29 @@ struct PlayerPositionText: View {
     }
 }
 
+struct PlayerStatsTable: View {
+    @ObservedObject var playerDetailsViewModel: PlayerDetailsViewModel
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Stats")
+                    .bold()
+                Spacer()
+            }
+            .onAppear {
+                playerDetailsViewModel.fetchPlayerStats()
+            }
+            
+            HStack (spacing: 0){
+                StatsGridCell(statTitle: "PPG", statValue: "\(playerDetailsViewModel.ppg)")
+                StatsGridCell(statTitle: "RPG", statValue: "\(playerDetailsViewModel.rpg)")
+                StatsGridCell(statTitle: "APG", statValue: "\(playerDetailsViewModel.apg)")
+            }
+        }
+    }
+}
+
 struct PlayerMeasurementsTable: View {
     @ObservedObject var playerDetailsViewModel: PlayerDetailsViewModel
 
