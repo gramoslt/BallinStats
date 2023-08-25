@@ -18,6 +18,8 @@ struct TeamDetailsView: View {
                 TeamLogo(logoString: teamDetailsViewModel.team.logoString)
 
                 TeamInfo(team: teamDetailsViewModel.team)
+                
+                FollowButton(teamDetailsViewModel: teamDetailsViewModel)
 
                 GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
             }

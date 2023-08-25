@@ -29,6 +29,10 @@ enum TeamDetailsViewConstants {
     public static let columnMinimum = CGFloat(300)
     public static let lastGamesPlayedText = "Last Games Played:"
     public static let gridLogoHeight = CGFloat(20)
+    public static let followButtonWidth = CGFloat(350)
+    public static let followButtonHeight = CGFloat(50)
+    public static let followButtonText = "Follow"
+    public static let followButtonIconString = "plus"
 }
 
 enum PlayersTabViewConstants {
