@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PageMetaData: Decodable {
+struct PageMetaData: Codable {
     let totalPages: Int
     let currentPage: Int
     let totalCount: Int
