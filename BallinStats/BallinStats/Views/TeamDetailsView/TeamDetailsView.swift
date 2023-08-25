@@ -24,7 +24,6 @@ struct TeamDetailsView: View {
             .navigationTitle(teamDetailsViewModel.team.fullName)
             .background(teamDetailsViewModel.backgroundColor)
         }
-        .preferredColorScheme(.dark)
     }
 }
 

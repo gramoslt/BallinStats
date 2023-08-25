@@ -13,17 +13,19 @@ struct PlayersList: View {
 
     var body: some View {
         List {
-            ForEach(playersTabViewModel.players) { player in
-                NavigationLink {
-                    PlayerDetailsView(player: player)
-                } label: {
-                    PlayerRow(player: player)
+            Group {
+                ForEach(playersTabViewModel.players) { player in
+                    NavigationLink {
+                        PlayerDetailsView(player: player)
+                    } label: {
+                        PlayerRow(player: player)
+                    }
                 }
+                playersTabViewModel.loadingStateView
             }
             .listRowBackground(Color.customBackgroundColor)
             .listRowSeparatorTint(.customYellowStroke)
         }
-        .preferredColorScheme(.dark)
         .listStyle(.plain)
         .background(.customBackgroundColor)
         .navigationBarTitle(TabViewConstants.playersLabel)

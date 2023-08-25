@@ -17,4 +17,7 @@ extension ShapeStyle where Self == Color {
     static var customBackgroundColor: Color {
         Color("Dark-Blue-BackgroundColor")
     }
+    static var redText: Color {
+        Color("RedTextColor")
+    }
 }

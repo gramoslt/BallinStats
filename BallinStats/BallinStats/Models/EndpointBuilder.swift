@@ -36,9 +36,32 @@ class EndpointBuilder {
         }
         return components.url
     }
+
+    func getGamesURL(season: Int, teamId: Int) -> URL? {
+        components.path = Self.gamesPath
+        components.queryItems = [
+            URLQueryItem(name: "seasons[]", value: "\(season)"),
+            URLQueryItem(name: "team_ids[]", value: "\(teamId)")
+        ]
+        return components.url
+    }
+
+    func getPlayerSeasonAveragesURL(season: Int?, playerId: Int) -> URL? {
+        components.path = Self.playerSeasonAveragesPath
+        if let season = season {
+            components.queryItems = [
+                URLQueryItem(name: "season", value: "\(season)")
+            ]
+        }
+        components.queryItems?.append(URLQueryItem(name: "player_ids[]", value: "\(playerId)"))
+
+        return components.url
+    }
 }
 
 extension EndpointBuilder {
     static let teamsPath: String = "/api/v1/teams"
     static let playersPath: String = "/api/v1/players"
+    static let gamesPath: String = "/api/v1/games"
+    static let playerSeasonAveragesPath: String = "/api/v1/season_averages"
 }
