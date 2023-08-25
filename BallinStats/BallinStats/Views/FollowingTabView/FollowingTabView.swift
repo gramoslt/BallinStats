@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct FollowingTabView: View {
+    @ObservedObject var followingTabViewModel: FollowingTabViewModel
+
     var body: some View {
-        Text("Following View")
+        NavigationStack {
+            TeamsList(followingTabViewModel: followingTabViewModel)
+        }
     }
 }
 
 struct FollowingTabView_Previews: PreviewProvider {
     static var previews: some View {
-        FollowingTabView()
+        FollowingTabView(followingTabViewModel: FollowingTabViewModel())
     }
 }
