@@ -58,4 +58,14 @@ extension TeamDetails {
         fullName: "Atlanta Hawks",
         name: "Hawks"
     )
+    
+    init(team: Team){
+        self.id = Int(team.id)
+        self.abbreviation = team.abbreviation ?? ""
+        self.city = team.city ?? ""
+        self.conference = team.conference ?? ""
+        self.division = team.division ?? ""
+        self.fullName = team.fullName ?? ""
+        self.name = team.name ?? ""
+    }
 }

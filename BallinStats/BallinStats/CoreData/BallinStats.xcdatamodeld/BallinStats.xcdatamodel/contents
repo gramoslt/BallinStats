@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G90" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Team" representedClassName="Team" syncable="YES" codeGenerationType="class">
-        <attribute name="abbreviation" optional="YES" attributeType="String"/>
-        <attribute name="city" optional="YES" attributeType="String"/>
-        <attribute name="conference" optional="YES" attributeType="String"/>
-        <attribute name="division" optional="YES" attributeType="String"/>
-        <attribute name="fullName" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="logoString" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="abbreviation" attributeType="String"/>
+        <attribute name="city" attributeType="String"/>
+        <attribute name="conference" attributeType="String"/>
+        <attribute name="division" attributeType="String"/>
+        <attribute name="fullName" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="logoString" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
     </entity>
 </model>
