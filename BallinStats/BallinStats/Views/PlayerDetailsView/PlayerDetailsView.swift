@@ -15,7 +15,7 @@ struct PlayerDetailsView: View {
             ScrollView {
                 TeamLogo(logoString: playerDetailsViewModel.player.team.logoString)
                 
-                PlayerPositionText(playerDetailsViewModel: playerDetailsViewModel)
+                PlayerPosition(playerDetailsViewModel: playerDetailsViewModel)
                 
                 VStack {
                     PlayerStatsTable(playerDetailsViewModel: playerDetailsViewModel)

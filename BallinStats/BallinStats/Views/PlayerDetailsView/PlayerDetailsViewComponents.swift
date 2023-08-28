@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct PlayerPositionText: View {
+struct PlayerPosition: View {
     @ObservedObject var playerDetailsViewModel: PlayerDetailsViewModel
 
     var body: some View {
