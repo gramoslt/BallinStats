@@ -27,6 +27,7 @@ struct TeamsList: View {
                     TeamRow(team: tempTeam)
                 }
             }
+            .onDelete(perform: unfollowTeam)
             .listRowBackground(Color.customBackgroundColor)
             .listRowSeparatorTint(.customYellowStroke)
         }
@@ -34,6 +35,14 @@ struct TeamsList: View {
         .background(.customBackgroundColor)
         .navigationBarTitle(TabViewConstants.followingLabel)
     }
+
+    func unfollowTeam(at offsets: IndexSet) {
+            offsets.forEach { index in
+                let team = self.followedTeams[index]
+                self.managedObjectContext.delete(team)
+              }
+            CoreDataManager.shared.saveContext()
+        }
 }
 
 struct TeamRow: View {
