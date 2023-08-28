@@ -54,6 +54,23 @@ struct TeamInfo: View {
     }
 }
 
+struct FollowButton: View {
+    @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
+
+    var body: some View {
+        Button {
+            CoreDataManager.shared.saveTeam(team: teamDetailsViewModel.team)
+        } label: {
+            Label(TeamDetailsViewConstants.followButtonText,
+                  systemImage: TeamDetailsViewConstants.followButtonIconString)
+                .frame(width: TeamDetailsViewConstants.followButtonWidth,
+                       height: TeamDetailsViewConstants.followButtonHeight)
+                .background(.thinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: TeamsTabViewConstants.cornerRadius))
+        }
+    }
+}
+
 struct GamesPlayedGrid: View {
     @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
 
