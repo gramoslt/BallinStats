@@ -9,24 +9,27 @@ import SwiftUI
 
 struct TeamsList: View {
     @ObservedObject var followingTabViewModel: FollowingTabViewModel
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(
+      entity: Team.entity(),
+      sortDescriptors: [NSSortDescriptor(keyPath: \Team.id, ascending: true)]
+    ) var followedTeams: FetchedResults<Team>
 
     var body: some View {
         List {
-            ForEach(followingTabViewModel.followedTeams) { team in
+            ForEach(followedTeams) { team in
+                let tempTeam = TeamDetails(team: team)
                 NavigationLink {
                     TeamDetailsView(
-                        teamDetailsViewModel: TeamDetailsViewModel(
-                            team: team
-                        )
+                        teamDetailsViewModel: TeamDetailsViewModel(team: tempTeam)
                     )
                 } label: {
-                    TeamRow(team: team)
+                    TeamRow(team: tempTeam)
                 }
             }
             .listRowBackground(Color.customBackgroundColor)
             .listRowSeparatorTint(.customYellowStroke)
         }
-        .preferredColorScheme(.dark)
         .listStyle(.plain)
         .background(.customBackgroundColor)
         .navigationBarTitle(TabViewConstants.followingLabel)
