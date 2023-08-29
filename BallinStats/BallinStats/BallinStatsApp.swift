@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct BallinStatsApp: App {
+    @StateObject var networkMonitor = NetworkMonitor()
     var body: some Scene {
         WindowGroup {
             TabNavigationView()
                 .onAppear{
                     CoreDataManager.shared.load()
                 }
+                .environmentObject(networkMonitor)
         }
     }
 }

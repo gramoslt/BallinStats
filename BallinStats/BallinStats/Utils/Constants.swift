@@ -49,3 +49,9 @@ enum PlayerDetailsViewConstants {
 enum ListRowConstants {
     public static let logoHeight = CGFloat(40)
 }
+
+enum NetworkMonitorConstants {
+    public static let networkMonitor = "NetworkMonitor"
+    public static let networkMonitorMock = "MockNetworkMonitor"
+    public static let networkMonitorStatus = "NetworkMonitor status:"
+}
