@@ -26,7 +26,6 @@ struct TeamsList: View {
             .listRowBackground(Color.customBackgroundColor)
             .listRowSeparatorTint(.customYellowStroke)
         }
-        .preferredColorScheme(.dark)
         .listStyle(.plain)
         .background(.customBackgroundColor)
         .navigationBarTitle(TabViewConstants.followingLabel)
