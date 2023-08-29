@@ -47,6 +47,7 @@ struct TabNavigationView: View {
                 }
 
                 FollowingTabView(followingTabViewModel: followingTabViewModel)
+                    .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
                     .tabItem {
                         Label(TabViewConstants.followingLabel,
                               systemImage: TabViewConstants.followingIconString
