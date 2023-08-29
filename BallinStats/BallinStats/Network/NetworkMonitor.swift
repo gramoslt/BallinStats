@@ -9,7 +9,7 @@ import Foundation
 import Network
 
 class NetworkMonitor: ObservableObject {
-    @Published var isConnected = false
+    @Published var isConnected = true
     private let monitor: NWPathMonitor
     private let queue: DispatchQueue
 
