@@ -8,32 +8,37 @@
 import SwiftUI
 
 struct TabNavigationView: View {
+    @EnvironmentObject var networkMonitor: NetworkMonitor
     @StateObject var playersTabViewModel: PlayersTabViewModel = PlayersTabViewModel()
     @StateObject var teamsTabViewModel = TeamsTabViewModel()
     @StateObject var followingTabViewModel = FollowingTabViewModel()
 
     var body: some View {
-        TabView {
-            TeamsTabView(teamsTabViewModel: teamsTabViewModel)
-                .tabItem {
-                    Label(TabViewConstants.teamsLabel,
-                          systemImage: TabViewConstants.teamsIconString
-                    )
-                }
+        if networkMonitor.isConnected {
+            TabView {
+                TeamsTabView(teamsTabViewModel: teamsTabViewModel)
+                    .tabItem {
+                        Label(TabViewConstants.teamsLabel,
+                              systemImage: TabViewConstants.teamsIconString
+                        )
+                    }
 
-            PlayersTabView(playersTabViewModel: playersTabViewModel)
-                .tabItem {
-                    Label(TabViewConstants.playersLabel,
-                          systemImage: TabViewConstants.playersIconString
-                    )
-                }
+                PlayersTabView(playersTabViewModel: playersTabViewModel)
+                    .tabItem {
+                        Label(TabViewConstants.playersLabel,
+                              systemImage: TabViewConstants.playersIconString
+                        )
+                    }
 
-            FollowingTabView(followingTabViewModel: followingTabViewModel)
-                .tabItem {
-                    Label(TabViewConstants.followingLabel,
-                          systemImage: TabViewConstants.followingIconString
-                    )
-                }
+                FollowingTabView(followingTabViewModel: followingTabViewModel)
+                    .tabItem {
+                        Label(TabViewConstants.followingLabel,
+                              systemImage: TabViewConstants.followingIconString
+                        )
+                    }
+            }
+        } else {
+            ProgressView()
         }
     }
 }
@@ -41,7 +46,9 @@ struct TabNavigationView: View {
 struct TabNavigationView_Previews: PreviewProvider {
     static var previews: some View {
         TabNavigationView()
+            .environmentObject(NetworkMonitor.init(isConnected: true))
         TabNavigationView()
             .preferredColorScheme(.dark)
+            .environmentObject(NetworkMonitor.init(isConnected: true))
     }
 }
