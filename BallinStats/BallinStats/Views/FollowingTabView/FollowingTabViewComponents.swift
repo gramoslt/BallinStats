@@ -34,6 +34,11 @@ struct TeamsList: View {
         .listStyle(.plain)
         .background(.customBackgroundColor)
         .navigationBarTitle(TabViewConstants.followingLabel)
+        .toolbar {
+            ToolbarItem {
+                EditButton()
+            }
+        }
     }
 
     func unfollowTeam(at offsets: IndexSet) {
