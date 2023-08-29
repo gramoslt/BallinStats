@@ -21,19 +21,19 @@ import SwiftUI
         if let height = self.player.heightFeet {
             return "\(height)"
         }
-        return "N/A"
+        return PlayerDetailsViewConstants.notAvailableString
     }
     var weightPounds: String {
         if let weight = self.player.weightPounds {
             return "\(weight)"
         }
-        return "N/A"
+        return PlayerDetailsViewConstants.notAvailableString
     }
     var heightInches: String {
         if let height = self.player.heightInches {
             return "\(height)"
         }
-        return "N/A"
+        return PlayerDetailsViewConstants.notAvailableString
     }
 
     func fetchPlayerStats() {
