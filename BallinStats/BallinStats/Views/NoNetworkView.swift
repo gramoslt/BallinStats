@@ -9,7 +9,18 @@ import SwiftUI
 
 struct NoNetworkView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(NoNetworkViewConstants.oopsText)
+                .font(.largeTitle)
+                .bold()
+            Text(NoNetworkViewConstants.noNetworkText)
+                .font(.title)
+                .fontWeight(.semibold)
+            Image(systemName: NoNetworkViewConstants.noNetworkIcon)
+                .resizable()
+                .frame(width: NoNetworkViewConstants.imageWidth,
+                       height: NoNetworkViewConstants.imageHeight)
+        }
     }
 }
 

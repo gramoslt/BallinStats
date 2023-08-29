@@ -55,3 +55,11 @@ enum NetworkMonitorConstants {
     public static let networkMonitorMock = "MockNetworkMonitor"
     public static let networkMonitorStatus = "NetworkMonitor status:"
 }
+
+enum NoNetworkViewConstants {
+    public static let noNetworkIcon = "wifi.slash"
+    public static let noNetworkText = "No network available"
+    public static let oopsText = "Oops!"
+    public static let imageWidth = CGFloat(110)
+    public static let imageHeight = CGFloat(100)
+}
