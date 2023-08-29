@@ -23,6 +23,17 @@ class CoreDataManager {
         // reference to scratchpad on the store
         return persistanceContainer.viewContext
     }
+    
+    func saveContext() {
+        if self.viewContext.hasChanges {
+        do {
+          try viewContext.save()
+        } catch {
+          let nserror = error as NSError
+          fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+      }
+    }
 
     func load() {
         persistanceContainer.loadPersistentStores { storeDescription, error in

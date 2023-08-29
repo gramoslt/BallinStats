@@ -9,27 +9,45 @@ import SwiftUI
 
 struct TeamsList: View {
     @ObservedObject var followingTabViewModel: FollowingTabViewModel
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @FetchRequest(
+      entity: Team.entity(),
+      sortDescriptors: [NSSortDescriptor(keyPath: \Team.id, ascending: true)]
+    ) var followedTeams: FetchedResults<Team>
 
     var body: some View {
         List {
-            ForEach(followingTabViewModel.followedTeams) { team in
+            ForEach(followedTeams) { team in
+                let tempTeam = TeamDetails(team: team)
                 NavigationLink {
                     TeamDetailsView(
-                        teamDetailsViewModel: TeamDetailsViewModel(
-                            team: team
-                        )
+                        teamDetailsViewModel: TeamDetailsViewModel(team: tempTeam)
                     )
                 } label: {
-                    TeamRow(team: team)
+                    TeamRow(team: tempTeam)
                 }
             }
+            .onDelete(perform: unfollowTeam)
             .listRowBackground(Color.customBackgroundColor)
             .listRowSeparatorTint(.customYellowStroke)
         }
         .listStyle(.plain)
         .background(.customBackgroundColor)
         .navigationBarTitle(TabViewConstants.followingLabel)
+        .toolbar {
+            ToolbarItem {
+                EditButton()
+            }
+        }
     }
+
+    func unfollowTeam(at offsets: IndexSet) {
+            offsets.forEach { index in
+                let team = self.followedTeams[index]
+                self.managedObjectContext.delete(team)
+              }
+            CoreDataManager.shared.saveContext()
+        }
 }
 
 struct TeamRow: View {
