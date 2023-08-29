@@ -82,8 +82,8 @@ import SwiftUI
         ) { result in
             if let result = result {
                 self.players.append(contentsOf: result.data)
-                self.totalPages = result.meta.totalPages
-                self.state = (result.meta.totalPages == self.currentPage) ? .loadedAll : .good
+                self.totalPages = result.meta?.totalPages ?? 1
+                self.state = (result.meta?.totalPages == self.currentPage) ? .loadedAll : .good
                 self.currentPage += 1
             }
         }

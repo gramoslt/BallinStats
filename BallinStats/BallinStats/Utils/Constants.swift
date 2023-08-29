@@ -40,6 +40,12 @@ enum PlayersTabViewConstants {
     public static let detailsText = "Details"
 }
 
+enum PlayerDetailsViewConstants {
+    public static let statsGridCellWidth = CGFloat(120)
+    public static let statsGridCellHeight = CGFloat(80)
+    public static let notAvailableString = "N/A"
+}
+
 enum ListRowConstants {
     public static let logoHeight = CGFloat(40)
 }

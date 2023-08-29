@@ -8,15 +8,31 @@
 import SwiftUI
 
 struct PlayerDetailsView: View {
-    var player: Player
+    @ObservedObject var playerDetailsViewModel: PlayerDetailsViewModel
 
     var body: some View {
-        Text(player.fullName)
+        NavigationStack {
+            ScrollView {
+                TeamLogo(logoString: playerDetailsViewModel.player.team.logoString)
+                
+                PlayerPosition(playerDetailsViewModel: playerDetailsViewModel)
+                
+                VStack {
+                    PlayerStatsTable(playerDetailsViewModel: playerDetailsViewModel)
+                    
+                    PlayerMeasurementsTable(playerDetailsViewModel: playerDetailsViewModel)
+                }
+                .padding()
+            }
+            .frame(maxWidth: .infinity)
+            .background(playerDetailsViewModel.backgroundColor)
+            .navigationTitle(playerDetailsViewModel.player.fullName)
+        }
     }
 }
 
 struct PlayerDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailsView(player: Player.mock)
+        PlayerDetailsView(playerDetailsViewModel: PlayerDetailsViewModel(player: Player.mock))
     }
 }
