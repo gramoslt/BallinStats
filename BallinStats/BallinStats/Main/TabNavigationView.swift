@@ -14,37 +14,21 @@ struct TabNavigationView: View {
     @StateObject var followingTabViewModel = FollowingTabViewModel()
 
     var body: some View {
+        if networkMonitor.isConnected {
             TabView {
-                if networkMonitor.isConnected {
-                    TeamsTabView(teamsTabViewModel: teamsTabViewModel)
-                        .tabItem {
-                            Label(TabViewConstants.teamsLabel,
-                                  systemImage: TabViewConstants.teamsIconString
-                            )
-                        }
+                TeamsTabView(teamsTabViewModel: teamsTabViewModel)
+                    .tabItem {
+                        Label(TabViewConstants.teamsLabel,
+                              systemImage: TabViewConstants.teamsIconString
+                        )
+                    }
 
-                    PlayersTabView(playersTabViewModel: playersTabViewModel)
-                        .tabItem {
-                            Label(TabViewConstants.playersLabel,
-                                  systemImage: TabViewConstants.playersIconString
-                            )
-                        }
-
-                } else {
-                    NoNetworkView()
-                        .tabItem {
-                            Label(TabViewConstants.teamsLabel,
-                                  systemImage: TabViewConstants.teamsIconString
-                            )
-                        }
-
-                    NoNetworkView()
-                        .tabItem {
-                            Label(TabViewConstants.playersLabel,
-                                  systemImage: TabViewConstants.playersIconString
-                            )
-                        }
-                }
+                PlayersTabView(playersTabViewModel: playersTabViewModel)
+                    .tabItem {
+                        Label(TabViewConstants.playersLabel,
+                              systemImage: TabViewConstants.playersIconString
+                        )
+                    }
 
                 FollowingTabView(followingTabViewModel: followingTabViewModel)
                     .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
@@ -54,6 +38,9 @@ struct TabNavigationView: View {
                         )
                     }
             }
+        } else {
+            NoNetworkView()
+        }
     }
 }
 
