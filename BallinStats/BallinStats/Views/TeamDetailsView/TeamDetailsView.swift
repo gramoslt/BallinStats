@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TeamDetailsView: View {
     @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
-    @EnvironmentObject var networkMonitor: NetworkMonitor
 
     var body: some View {
         NavigationStack {
@@ -22,11 +21,7 @@ struct TeamDetailsView: View {
                 
                 FollowButton(teamDetailsViewModel: teamDetailsViewModel)
 
-                if networkMonitor.isConnected {
-                    GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
-                } else {
-                    NoNetworkView()
-                }
+                GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
             }
             .navigationTitle(teamDetailsViewModel.team.fullName)
             .background(teamDetailsViewModel.backgroundColor)
