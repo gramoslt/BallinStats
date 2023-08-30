@@ -18,13 +18,11 @@ struct TeamDetailsLandscapeView: View {
 
                 ScrollView {
                     HStack {
+                        TeamLogo(logoString: teamDetailsViewModel.team.logoString)
+
                         VStack {
-                            TeamLogo(logoString: teamDetailsViewModel.team.logoString)
                             TeamAbbreviation(abbreviation: teamDetailsViewModel.team.abbreviation)
                             TeamInfo(team: teamDetailsViewModel.team)
-                        }
-                        
-                        VStack {
                             FollowButton(teamDetailsViewModel: teamDetailsViewModel)
 
                             GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
