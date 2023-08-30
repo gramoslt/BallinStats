@@ -16,6 +16,8 @@
 		E606708E2A96958C004AD6FA /* PlayerDetailsViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606708D2A96958C004AD6FA /* PlayerDetailsViewComponents.swift */; };
 		E60670B12A97E4AF004AD6FA /* BallinStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E60670AF2A97E4AF004AD6FA /* BallinStats.xcdatamodeld */; };
 		E60670B32A97E5BE004AD6FA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670B22A97E5BE004AD6FA /* CoreDataManager.swift */; };
+		E6083FED2A9FBB8200315775 /* TeamDetailsOrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6083FEC2A9FBB8200315775 /* TeamDetailsOrientationView.swift */; };
+		E6083FEF2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6083FEE2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift */; };
 		E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */; };
 		E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */; };
 		E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE792A8FBFF900E4C096 /* Colors.swift */; };
@@ -52,6 +54,8 @@
 		E606708D2A96958C004AD6FA /* PlayerDetailsViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewComponents.swift; sourceTree = "<group>"; };
 		E60670B02A97E4AF004AD6FA /* BallinStats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BallinStats.xcdatamodel; sourceTree = "<group>"; };
 		E60670B22A97E5BE004AD6FA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E6083FEC2A9FBB8200315775 /* TeamDetailsOrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsOrientationView.swift; sourceTree = "<group>"; };
+		E6083FEE2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsLandscapeView.swift; sourceTree = "<group>"; };
 		E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabViewModel.swift; sourceTree = "<group>"; };
 		E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		E668BE792A8FBFF900E4C096 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 				E6A1E7B62A8EA397005C3C44 /* TeamDetailsView.swift */,
 				E6D7D09F2A8FF8DD007CD7AB /* TeamDetailsViewModel.swift */,
 				E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */,
+				E6083FEC2A9FBB8200315775 /* TeamDetailsOrientationView.swift */,
+				E6083FEE2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift */,
 			);
 			path = TeamDetailsView;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */,
 				E60670842A93C2E0004AD6FA /* PageMetaData.swift in Sources */,
 				E68FDB042A8D5A7D00A9AE60 /* BallinStatsApp.swift in Sources */,
+				E6083FEF2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift in Sources */,
 				E606708E2A96958C004AD6FA /* PlayerDetailsViewComponents.swift in Sources */,
 				E60670862A93D6FE004AD6FA /* EndpointBuilder.swift in Sources */,
 				E6A1E7B72A8EA397005C3C44 /* TeamDetailsView.swift in Sources */,
@@ -366,6 +373,7 @@
 				E6807D652A8DAB3C009B32AC /* Constants.swift in Sources */,
 				E606708C2A968CB0004AD6FA /* PlayerDetailsViewModel.swift in Sources */,
 				E606708A2A968763004AD6FA /* FollowingTabViewComponents.swift in Sources */,
+				E6083FED2A9FBB8200315775 /* TeamDetailsOrientationView.swift in Sources */,
 				E6A1E7B92A8EACD0005C3C44 /* PlayersTabViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
