@@ -48,6 +48,7 @@ enum PlayerDetailsViewConstants {
 
 enum ListRowConstants {
     public static let logoHeight = CGFloat(40)
+    public static let logoWidth = CGFloat(70)
 }
 
 enum NetworkMonitorConstants {

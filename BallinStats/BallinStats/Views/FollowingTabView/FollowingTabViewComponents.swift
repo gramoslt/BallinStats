@@ -58,7 +58,7 @@ struct TeamRow: View {
             Image(team.logoString)
                 .resizable()
                 .scaledToFit()
-                .frame(height: ListRowConstants.logoHeight)
+                .frame(width: ListRowConstants.logoWidth, height: ListRowConstants.logoHeight)
             
             VStack(alignment: .leading) {
                 Text(team.fullName)
