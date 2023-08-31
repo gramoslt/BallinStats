@@ -25,6 +25,7 @@ struct PlayerDetailsLandscapeView: View {
                     .padding()
                 }
             }
+            .scrollIndicators(.hidden)
             .frame(maxWidth: .infinity)
             .background(playerDetailsViewModel.backgroundColor)
             .navigationTitle(playerDetailsViewModel.player.fullName)
