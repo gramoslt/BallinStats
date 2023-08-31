@@ -24,8 +24,6 @@ struct PlayerDetailsLandscapeView: View {
                     }
                     .padding()
                 }
-                
-            
             }
             .frame(maxWidth: .infinity)
             .background(playerDetailsViewModel.backgroundColor)
