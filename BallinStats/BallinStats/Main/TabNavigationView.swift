@@ -16,27 +16,31 @@ struct TabNavigationView: View {
     var body: some View {
         if networkMonitor.isConnected {
             TabView {
-                TeamsTabView(teamsTabViewModel: teamsTabViewModel)
-                    .tabItem {
-                        Label(TabViewConstants.teamsLabel,
-                              systemImage: TabViewConstants.teamsIconString
-                        )
+                Group {
+                    TeamsTabView(teamsTabViewModel: teamsTabViewModel)
+                        .tabItem {
+                            Label(TabViewConstants.teamsLabel,
+                                  systemImage: TabViewConstants.teamsIconString
+                            )
                     }
 
-                PlayersTabView(playersTabViewModel: playersTabViewModel)
-                    .tabItem {
-                        Label(TabViewConstants.playersLabel,
-                              systemImage: TabViewConstants.playersIconString
-                        )
-                    }
+                    PlayersTabView(playersTabViewModel: playersTabViewModel)
+                        .tabItem {
+                            Label(TabViewConstants.playersLabel,
+                                  systemImage: TabViewConstants.playersIconString
+                            )
+                        }
 
-                FollowingTabView(followingTabViewModel: followingTabViewModel)
-                    .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
-                    .tabItem {
-                        Label(TabViewConstants.followingLabel,
-                              systemImage: TabViewConstants.followingIconString
-                        )
-                    }
+                    FollowingTabView(followingTabViewModel: followingTabViewModel)
+                        .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
+                        .tabItem {
+                            Label(TabViewConstants.followingLabel,
+                                  systemImage: TabViewConstants.followingIconString
+                            )
+                        }
+                }
+                .toolbar(.visible, for: .tabBar)
+                .toolbarBackground(.visible, for: .tabBar)
             }
         } else {
             NoNetworkView()
@@ -47,7 +51,7 @@ struct TabNavigationView: View {
 struct TabNavigationView_Previews: PreviewProvider {
     static var previews: some View {
         TabNavigationView()
-            .environmentObject(NetworkMonitor.init(isConnected: false))
+            .environmentObject(NetworkMonitor.init(isConnected: true))
         TabNavigationView()
             .preferredColorScheme(.dark)
             .environmentObject(NetworkMonitor.init(isConnected: true))
