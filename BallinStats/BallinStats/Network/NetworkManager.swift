@@ -19,7 +19,7 @@ class NetworkManager {
             fetch(with: urlRequest, type: T.self, completion: completion)
         }
     }
-    
+
     private func fetch<T: Codable>(with urlRequest: URLRequest, type: T.Type, completion: @escaping (T?) -> Void ) {
         let task = session.dataTask(with: urlRequest) { data, _, error in
             guard let data = data else {

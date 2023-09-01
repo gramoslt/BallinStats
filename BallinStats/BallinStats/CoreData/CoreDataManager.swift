@@ -23,7 +23,7 @@ class CoreDataManager {
         // reference to scratchpad on the store
         return persistanceContainer.viewContext
     }
-    
+
     func saveContext() {
         if self.viewContext.hasChanges {
         do {
