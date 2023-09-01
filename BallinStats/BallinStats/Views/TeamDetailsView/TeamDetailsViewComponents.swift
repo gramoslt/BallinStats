@@ -71,6 +71,24 @@ struct FollowButton: View {
     }
 }
 
+struct UnfollowButton: View {
+    @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    var body: some View {
+        Button {
+            CoreDataManager.shared.deleteTeamById(with: Int32(teamDetailsViewModel.team.id))
+        } label: {
+            Label(TeamDetailsViewConstants.unfollowButtonText,
+                  systemImage: TeamDetailsViewConstants.unfollowButtonIconString)
+                .frame(width: TeamDetailsViewConstants.followButtonWidth,
+                       height: TeamDetailsViewConstants.followButtonHeight)
+                .background(.thinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: TeamsTabViewConstants.cornerRadius))
+        }
+    }
+}
+
 struct GamesPlayedGrid: View {
     @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
 
