@@ -22,7 +22,6 @@ struct TeamDetailsView: View {
                 FollowButton(teamDetailsViewModel: teamDetailsViewModel)
 
                 GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
-
             }
             .navigationTitle(teamDetailsViewModel.team.fullName)
             .background(teamDetailsViewModel.backgroundColor)

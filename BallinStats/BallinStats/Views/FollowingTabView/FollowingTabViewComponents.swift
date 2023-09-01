@@ -20,7 +20,7 @@ struct TeamsList: View {
             ForEach(followedTeams) { team in
                 let tempTeam = TeamDetails(team: team)
                 NavigationLink {
-                    TeamDetailsView(
+                    TeamDetailsOrientationView(
                         teamDetailsViewModel: TeamDetailsViewModel(team: tempTeam)
                     )
                 } label: {
