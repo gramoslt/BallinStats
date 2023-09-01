@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 @MainActor class TeamDetailsViewModel: ObservableObject {
     @Published var games: [Game] = []
     var team: TeamDetails
@@ -18,10 +17,12 @@ import SwiftUI
             fetchFiveGames()
         }
     }
+    @Published var isFollowed: Bool
 
     init(team: TeamDetails) {
         self.selectedYear = 2022
         self.team = team
+        self.isFollowed = CoreDataManager.shared.checkIfItemExist(id: team.id)
     }
 
     func fetchFiveGames() {
@@ -36,6 +37,14 @@ import SwiftUI
                     self.games = Array(result.data[0..<5])
                 }
             }
+        }
+    }
+
+    @ViewBuilder var followButton: some View {
+        if self.isFollowed {
+            UnfollowButton(teamDetailsViewModel: self)
+        } else {
+            FollowButton(teamDetailsViewModel: self)
         }
     }
 }

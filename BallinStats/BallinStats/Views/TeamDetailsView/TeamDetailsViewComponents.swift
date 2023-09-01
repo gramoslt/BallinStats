@@ -60,6 +60,7 @@ struct FollowButton: View {
     var body: some View {
         Button {
             CoreDataManager.shared.saveTeam(team: teamDetailsViewModel.team)
+            teamDetailsViewModel.isFollowed.toggle()
         } label: {
             Label(TeamDetailsViewConstants.followButtonText,
                   systemImage: TeamDetailsViewConstants.followButtonIconString)
@@ -78,6 +79,7 @@ struct UnfollowButton: View {
     var body: some View {
         Button {
             CoreDataManager.shared.deleteTeamById(with: Int32(teamDetailsViewModel.team.id))
+            teamDetailsViewModel.isFollowed.toggle()
         } label: {
             Label(TeamDetailsViewConstants.unfollowButtonText,
                   systemImage: TeamDetailsViewConstants.unfollowButtonIconString)
