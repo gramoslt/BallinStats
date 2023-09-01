@@ -34,6 +34,5 @@ struct TeamDetailsView_Previews: PreviewProvider {
         TeamDetailsView(
             teamDetailsViewModel: TeamDetailsViewModel(team: TeamDetails.mockLAL)
         )
-        .environmentObject(NetworkMonitor.init(isConnected: false))
     }
 }
