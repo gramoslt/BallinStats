@@ -32,7 +32,9 @@ enum TeamDetailsViewConstants {
     public static let followButtonWidth = CGFloat(350)
     public static let followButtonHeight = CGFloat(50)
     public static let followButtonText = "Follow"
-    public static let followButtonIconString = "plus"
+    public static let unfollowButtonText = "Unfollow"
+    public static let followButtonIconString = "heart"
+    public static let unfollowButtonIconString = "heart.slash"
 }
 
 enum PlayersTabViewConstants {

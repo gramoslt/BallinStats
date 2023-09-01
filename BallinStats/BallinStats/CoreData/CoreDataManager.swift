@@ -63,4 +63,39 @@ extension CoreDataManager {
             fatalError(String(describing: error.localizedDescription))
         }
     }
+
+    func deleteTeamById(with id: Int32) { // this is the function that saves into the DB
+        let fetchRequest: NSFetchRequest<Team> = Team.fetchRequest()
+        fetchRequest.predicate = NSPredicate.init(format: "id==\(id)")
+        if let result = try? viewContext.fetch(fetchRequest) {
+            for object in result {
+                viewContext.delete(object)
+            }
+        }
+
+        do {
+            try viewContext.save()
+        } catch let error {
+            fatalError(String(describing: error.localizedDescription))
+        }
+    }
+
+    func checkIfItemExist(id: Int) -> Bool {
+        let managedContext = CoreDataManager.shared.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Team")
+        fetchRequest.fetchLimit =  1
+        fetchRequest.predicate = NSPredicate(format: "id == %d" ,id)
+
+        do {
+            let count = try managedContext.count(for: fetchRequest)
+            if count > 0 {
+                return true
+            }else {
+                return false
+            }
+        }catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return false
+        }
+    }
 }
