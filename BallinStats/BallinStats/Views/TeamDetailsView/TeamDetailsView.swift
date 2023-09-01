@@ -20,7 +20,7 @@ struct TeamDetailsView: View {
 
                 TeamInfo(team: teamDetailsViewModel.team)
                 
-                FollowButton(teamDetailsViewModel: teamDetailsViewModel)
+                teamDetailsViewModel.followButton
 
                 if networkMonitor.isConnected {
                     GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
