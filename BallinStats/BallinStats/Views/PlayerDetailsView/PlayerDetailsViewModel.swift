@@ -56,4 +56,8 @@ extension PlayerDetailsViewModel {
     var backgroundColor: Color {
         Color("\(self.player.team.abbreviation)Color")
     }
+
+    var foregroundColor: Color {
+        backgroundColor.getGrayScaleValue() > 0.60 ? Color.black : Color.white
+    }
 }

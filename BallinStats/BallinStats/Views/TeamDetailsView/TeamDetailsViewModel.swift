@@ -46,4 +46,8 @@ extension TeamDetailsViewModel {
     var backgroundColor: Color {
         Color("\(self.team.abbreviation)Color")
     }
+
+    var foregroundColor: Color {
+        backgroundColor.getGrayScaleValue() > 0.60 ? Color.black : Color.white
+    }
 }
