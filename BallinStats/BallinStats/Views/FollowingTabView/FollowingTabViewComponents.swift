@@ -20,7 +20,7 @@ struct TeamsList: View {
             ForEach(followedTeams) { team in
                 let tempTeam = TeamDetails(team: team)
                 NavigationLink {
-                    TeamDetailsView(
+                    TeamDetailsOrientationView(
                         teamDetailsViewModel: TeamDetailsViewModel(team: tempTeam)
                     )
                 } label: {
@@ -58,7 +58,7 @@ struct TeamRow: View {
             Image(team.logoString)
                 .resizable()
                 .scaledToFit()
-                .frame(height: ListRowConstants.logoHeight)
+                .frame(width: ListRowConstants.logoWidth, height: ListRowConstants.logoHeight)
             
             VStack(alignment: .leading) {
                 Text(team.fullName)

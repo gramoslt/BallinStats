@@ -35,7 +35,7 @@ struct TeamsDynamicGrid: View {
         LazyVGrid(columns: columns) {
             ForEach(teamsTabViewModel.filteredTeams) { team in
                 NavigationLink {
-                    TeamDetailsView(teamDetailsViewModel: TeamDetailsViewModel(team: team))
+                    TeamDetailsOrientationView(teamDetailsViewModel: TeamDetailsViewModel(team: team))
                 } label: {
                     TeamLogoButton(team: team)
                 }

@@ -139,7 +139,7 @@ struct HomeTeamCell: View {
             Text(team.abbreviation)
             Spacer()
             Text("\(score)")
-                .font(.title)
+                .font(.title2)
                 .bold()
         }
         .padding()
@@ -154,7 +154,7 @@ struct VisitorTeamCell: View {
     var body: some View {
         HStack {
             Text("\(score)")
-                .font(.title)
+                .font(.title2)
                 .bold()
             Spacer()
             Image(team.logoString)
