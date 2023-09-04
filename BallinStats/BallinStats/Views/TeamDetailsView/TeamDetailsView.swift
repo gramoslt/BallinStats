@@ -9,6 +9,14 @@ import SwiftUI
 
 struct TeamDetailsView: View {
     @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
+    
+    init(teamDetailsViewModel: TeamDetailsViewModel) {
+        self.teamDetailsViewModel = teamDetailsViewModel
+        
+        let foregroundUIColor = UIColor(teamDetailsViewModel.foregroundColor)
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: foregroundUIColor]
+
+       }
 
     var body: some View {
         NavigationStack {
@@ -25,6 +33,8 @@ struct TeamDetailsView: View {
             }
             .navigationTitle(teamDetailsViewModel.team.fullName)
             .background(teamDetailsViewModel.backgroundColor)
+            .foregroundColor(teamDetailsViewModel.foregroundColor)
+            .accentColor(teamDetailsViewModel.foregroundColor)
         }
     }
 }

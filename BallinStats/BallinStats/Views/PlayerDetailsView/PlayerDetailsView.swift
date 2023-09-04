@@ -24,6 +24,8 @@ struct PlayerDetailsView: View {
                 }
                 .padding()
             }
+            .foregroundColor(playerDetailsViewModel.foregroundColor)
+            .accentColor(playerDetailsViewModel.foregroundColor)
             .frame(maxWidth: .infinity)
             .background(playerDetailsViewModel.backgroundColor)
             .navigationTitle(playerDetailsViewModel.player.fullName)
