@@ -80,11 +80,7 @@ extension CoreDataManager {
 
         do {
             let count = try managedContext.count(for: fetchRequest)
-            if count > 0 {
-                return true
-            }else {
-                return false
-            }
+            return count > 0 
         }catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return false
