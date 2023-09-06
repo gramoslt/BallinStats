@@ -39,14 +39,6 @@ import SwiftUI
             }
         }
     }
-
-    @ViewBuilder var followButton: some View {
-        if self.isFollowed {
-            UnfollowButton(teamDetailsViewModel: self)
-        } else {
-            FollowButton(teamDetailsViewModel: self)
-        }
-    }
 }
 
 extension TeamDetailsViewModel {

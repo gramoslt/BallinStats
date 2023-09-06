@@ -19,7 +19,11 @@ struct TeamDetailsView: View {
 
                 TeamInfo(team: teamDetailsViewModel.team)
                 
-                teamDetailsViewModel.followButton
+                if teamDetailsViewModel.isFollowed {
+                    UnfollowButton(teamDetailsViewModel: teamDetailsViewModel)
+                } else {
+                    FollowButton(teamDetailsViewModel: teamDetailsViewModel)
+                }
 
                 GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
             }
