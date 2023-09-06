@@ -39,6 +39,10 @@ import SwiftUI
             }
         }
     }
+    func follow() {
+        CoreDataManager.shared.saveTeam(team: team)
+        isFollowed.toggle()
+    }
 
     func unfollow() {
         CoreDataManager.shared.deleteTeamById(with: Int32(team.id))

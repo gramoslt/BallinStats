@@ -55,32 +55,16 @@ struct TeamInfo: View {
 }
 
 struct FollowButton: View {
-    @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
-
-    var body: some View {
-        Button {
-            CoreDataManager.shared.saveTeam(team: teamDetailsViewModel.team)
-            teamDetailsViewModel.isFollowed.toggle()
-        } label: {
-            Label(TeamDetailsViewConstants.followButtonText,
-                  systemImage: TeamDetailsViewConstants.followButtonIconString)
-                .frame(width: TeamDetailsViewConstants.followButtonWidth,
-                       height: TeamDetailsViewConstants.followButtonHeight)
-                .background(.thinMaterial)
-                .clipShape(RoundedRectangle(cornerRadius: TeamsTabViewConstants.cornerRadius))
-        }
-    }
-}
-
-struct UnfollowButton: View {
+    let text: String
+    let iconString: String
     var action: () -> Void
 
     var body: some View {
         Button {
             action()
         } label: {
-            Label(TeamDetailsViewConstants.unfollowButtonText,
-                  systemImage: TeamDetailsViewConstants.unfollowButtonIconString)
+            Label(text,
+                  systemImage: iconString)
                 .frame(width: TeamDetailsViewConstants.followButtonWidth,
                        height: TeamDetailsViewConstants.followButtonHeight)
                 .background(.thinMaterial)

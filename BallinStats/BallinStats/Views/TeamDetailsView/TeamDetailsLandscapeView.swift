@@ -23,7 +23,22 @@ struct TeamDetailsLandscapeView: View {
                         VStack {
                             TeamAbbreviation(abbreviation: teamDetailsViewModel.team.abbreviation)
                             TeamInfo(team: teamDetailsViewModel.team)
-                            FollowButton(teamDetailsViewModel: teamDetailsViewModel)
+
+                            if teamDetailsViewModel.isFollowed {
+                                FollowButton(
+                                    text: TeamDetailsViewConstants.unfollowButtonText,
+                                    iconString: TeamDetailsViewConstants.unfollowButtonIconString
+                                ) {
+                                    teamDetailsViewModel.unfollow()
+                                }
+                            } else {
+                                FollowButton(
+                                    text: TeamDetailsViewConstants.followButtonText,
+                                    iconString: TeamDetailsViewConstants.followButtonIconString
+                                ) {
+                                    teamDetailsViewModel.follow()
+                                }
+                            }
 
                             GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)
                         }
