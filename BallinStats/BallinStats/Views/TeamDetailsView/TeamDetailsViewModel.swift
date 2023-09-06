@@ -39,6 +39,11 @@ import SwiftUI
             }
         }
     }
+
+    func unfollow() {
+        CoreDataManager.shared.deleteTeamById(with: Int32(team.id))
+        isFollowed.toggle()
+    }
 }
 
 extension TeamDetailsViewModel {

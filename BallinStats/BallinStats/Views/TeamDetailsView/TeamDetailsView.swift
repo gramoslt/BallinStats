@@ -20,7 +20,9 @@ struct TeamDetailsView: View {
                 TeamInfo(team: teamDetailsViewModel.team)
                 
                 if teamDetailsViewModel.isFollowed {
-                    UnfollowButton(teamDetailsViewModel: teamDetailsViewModel)
+                    UnfollowButton {
+                        teamDetailsViewModel.unfollow()
+                    }
                 } else {
                     FollowButton(teamDetailsViewModel: teamDetailsViewModel)
                 }

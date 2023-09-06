@@ -73,13 +73,11 @@ struct FollowButton: View {
 }
 
 struct UnfollowButton: View {
-    @ObservedObject var teamDetailsViewModel: TeamDetailsViewModel
-    @Environment(\.managedObjectContext) var managedObjectContext
+    var delete: () -> Void
 
     var body: some View {
         Button {
-            CoreDataManager.shared.deleteTeamById(with: Int32(teamDetailsViewModel.team.id))
-            teamDetailsViewModel.isFollowed.toggle()
+            delete()
         } label: {
             Label(TeamDetailsViewConstants.unfollowButtonText,
                   systemImage: TeamDetailsViewConstants.unfollowButtonIconString)
