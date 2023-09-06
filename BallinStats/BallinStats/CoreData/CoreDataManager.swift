@@ -57,11 +57,7 @@ extension CoreDataManager {
         tempTeam.logoString = team.logoString
         tempTeam.name = team.name
 
-        do {
-            try viewContext.save()
-        } catch let error {
-            fatalError(String(describing: error.localizedDescription))
-        }
+        saveContext()
     }
 
     func deleteTeamById(with id: Int32) { // this is the function that saves into the DB
@@ -73,11 +69,7 @@ extension CoreDataManager {
             }
         }
 
-        do {
-            try viewContext.save()
-        } catch let error {
-            fatalError(String(describing: error.localizedDescription))
-        }
+        saveContext()
     }
 
     func checkIfItemExist(id: Int) -> Bool {
