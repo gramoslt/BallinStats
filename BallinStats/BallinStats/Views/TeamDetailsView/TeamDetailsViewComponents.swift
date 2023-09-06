@@ -73,11 +73,11 @@ struct FollowButton: View {
 }
 
 struct UnfollowButton: View {
-    var delete: () -> Void
+    var action: () -> Void
 
     var body: some View {
         Button {
-            delete()
+            action()
         } label: {
             Label(TeamDetailsViewConstants.unfollowButtonText,
                   systemImage: TeamDetailsViewConstants.unfollowButtonIconString)
