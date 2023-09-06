@@ -24,20 +24,11 @@ struct TeamDetailsLandscapeView: View {
                             TeamAbbreviation(abbreviation: teamDetailsViewModel.team.abbreviation)
                             TeamInfo(team: teamDetailsViewModel.team)
 
-                            if teamDetailsViewModel.isFollowed {
-                                FollowButton(
-                                    text: TeamDetailsViewConstants.unfollowButtonText,
-                                    iconString: TeamDetailsViewConstants.unfollowButtonIconString
-                                ) {
-                                    teamDetailsViewModel.unfollow()
-                                }
-                            } else {
-                                FollowButton(
-                                    text: TeamDetailsViewConstants.followButtonText,
-                                    iconString: TeamDetailsViewConstants.followButtonIconString
-                                ) {
-                                    teamDetailsViewModel.follow()
-                                }
+                            FollowButton(
+                                text: teamDetailsViewModel.buttonText,
+                                iconString: teamDetailsViewModel.buttonIconString
+                            ) {
+                                teamDetailsViewModel.buttonAction()
                             }
 
                             GamesPlayedGrid(teamDetailsViewModel: teamDetailsViewModel)

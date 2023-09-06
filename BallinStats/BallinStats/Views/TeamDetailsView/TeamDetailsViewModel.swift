@@ -18,6 +18,15 @@ import SwiftUI
         }
     }
     @Published var isFollowed: Bool
+    var buttonText: String {
+        isFollowed ? TeamDetailsViewConstants.unfollowButtonText : TeamDetailsViewConstants.followButtonText
+    }
+    var buttonIconString: String {
+        isFollowed ? TeamDetailsViewConstants.unfollowButtonIconString : TeamDetailsViewConstants.followButtonIconString
+    }
+    var buttonAction: () -> Void {
+        isFollowed ? unfollow : follow
+    }
 
     init(team: TeamDetails) {
         self.selectedYear = 2022
