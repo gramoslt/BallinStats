@@ -41,12 +41,12 @@ import SwiftUI
     }
     func follow() {
         CoreDataManager.shared.saveTeam(team: team)
-        isFollowed.toggle()
+        isFollowed = true
     }
 
     func unfollow() {
         CoreDataManager.shared.deleteTeamById(with: Int32(team.id))
-        isFollowed.toggle()
+        isFollowed = false
     }
 }
 
