@@ -23,6 +23,8 @@ enum Division: String, CaseIterable, Identifiable {
 @MainActor class TeamsTabViewModel: ObservableObject {
     @Published var teams: [TeamDetails] = []
     @Published var selectedFilter: Division = .AllTeams
+    @Published var errorMessage: String? = ""
+    @Published var hasError: Bool = false
     var filteredTeams: [TeamDetails] {
         if selectedFilter == .AllTeams {
             return teams
@@ -35,11 +37,32 @@ enum Division: String, CaseIterable, Identifiable {
         NetworkManager.shared.fetchData(
             endpoint: EndpointBuilder.shared.getAllTeamsURL(page: page),
             type: ResultsPage<TeamDetails>.self
-        ) { result in
-            if let result = result {
-                self.teams = result.data
-            }
+        ) { [weak self] result in
+            self?.handleResult(result: result)
         }
+    }
+
+    private func handleResult(result: Result<ResultsPage<TeamDetails>, ErrorHandler.NetworkError>) {
+        switch result {
+        case .success(let result):
+            self.teams = result.data
+        case .failure(let error):
+            self.handle(error: error)
+        }
+    }
+
+    private func handle(error: ErrorHandler.NetworkError) {
+        switch error {
+        case .notFound:
+            errorMessage = TextConstants.notFoundText
+        case .badRequest:
+            errorMessage = TextConstants.badRequestText
+        case .serverError:
+            errorMessage = TextConstants.serverErrorText
+        default:
+            errorMessage = TextConstants.unknownErrorText
+        }
+        hasError = true
     }
 }
 

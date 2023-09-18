@@ -28,6 +28,8 @@ import SwiftUI
     var currentPage = 1
     var totalPages = 1
     var subscriptions = Set<AnyCancellable>()
+    @Published var errorMessage: String? = ""
+    @Published var hasError: Bool = false
 
     @ViewBuilder var loadingStateView: some View {
         switch self.state {
@@ -79,14 +81,36 @@ import SwiftUI
         NetworkManager.shared.fetchData(
             endpoint: EndpointBuilder.shared.getAllPlayersURL(page: currentPage, searchText: searchText),
             type: ResultsPage<Player>.self
-        ) { result in
-            if let result = result {
-                self.players.append(contentsOf: result.data)
-                self.totalPages = result.meta?.totalPages ?? 1
-                self.state = (result.meta?.totalPages == self.currentPage) ? .loadedAll : .good
-                self.currentPage += 1
-            }
+        ) { [weak self] result in
+            self?.handleResult(result: result)
         }
+    }
+
+    private func handleResult(result: Result<ResultsPage<Player>, ErrorHandler.NetworkError>) {
+        switch result {
+        case .success(let result):
+            self.players.append(contentsOf: result.data)
+            self.totalPages = result.meta?.totalPages ?? 1
+            self.state = (result.meta?.totalPages == self.currentPage) ? .loadedAll : .good
+            self.currentPage += 1
+
+        case .failure(let error):
+            self.handle(error: error)
+        }
+    }
+
+    private func handle(error: ErrorHandler.NetworkError) {
+        switch error {
+        case .notFound:
+            errorMessage = TextConstants.notFoundText
+        case .badRequest:
+            errorMessage = TextConstants.badRequestText
+        case .serverError:
+            errorMessage = TextConstants.serverErrorText
+        default:
+            errorMessage = TextConstants.unknownErrorText
+        }
+        hasError = true
     }
 }
 

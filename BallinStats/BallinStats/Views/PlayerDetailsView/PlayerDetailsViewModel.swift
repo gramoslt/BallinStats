@@ -35,20 +35,43 @@ import SwiftUI
         }
         return PlayerDetailsViewConstants.notAvailableString
     }
+    @Published var errorMessage: String? = ""
+    @Published var hasError: Bool = false
 
     func fetchPlayerStats() {
         NetworkManager.shared.fetchData(
             endpoint: EndpointBuilder.shared.getPlayerSeasonAveragesURL(season: nil, playerId: player.id),
             type: ResultsPage<PlayerStats>.self
-        ) { result in
-            if let result = result {
-                if !result.data.isEmpty {
-                    self.ppg = result.data[0].pts
-                    self.rpg = result.data[0].reb
-                    self.apg = result.data[0].ast
-                }
-            }
+        ) { [weak self] result in
+            self?.handleResult(result: result)
         }
+    }
+
+    private func handleResult(result: Result<ResultsPage<PlayerStats>, ErrorHandler.NetworkError>) {
+        switch result {
+        case .success(let result):
+            if !result.data.isEmpty {
+                self.ppg = result.data[0].pts
+                self.rpg = result.data[0].reb
+                self.apg = result.data[0].ast
+            }
+        case .failure(let error):
+            self.handle(error: error)
+        }
+    }
+
+    private func handle(error: ErrorHandler.NetworkError) {
+        switch error {
+        case .notFound:
+            errorMessage = TextConstants.notFoundText
+        case .badRequest:
+            errorMessage = TextConstants.badRequestText
+        case .serverError:
+            errorMessage = TextConstants.serverErrorText
+        default:
+            errorMessage = TextConstants.unknownErrorText
+        }
+        hasError = true
     }
 }
 

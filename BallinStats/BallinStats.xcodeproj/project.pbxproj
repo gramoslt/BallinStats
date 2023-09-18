@@ -44,6 +44,7 @@
 		E6D7D0A42A9001AE007CD7AB /* TeamDetailsViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */; };
 		E6E5E5462A9E466700B834E4 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5E5452A9E466700B834E4 /* NetworkMonitor.swift */; };
 		E6E5E54A2A9E48C800B834E4 /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5E5492A9E48C800B834E4 /* NoNetworkView.swift */; };
+		E6EA411C2AB8BAE2005612B2 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA411B2AB8BAE2005612B2 /* ErrorHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,7 @@
 		E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewComponents.swift; sourceTree = "<group>"; };
 		E6E5E5452A9E466700B834E4 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		E6E5E5492A9E48C800B834E4 /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
+		E6EA411B2AB8BAE2005612B2 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 				E67A2D5C2A93B2F300BA6D39 /* NetworkManager.swift */,
 				E67A2D5E2A93B82B00BA6D39 /* Decoder.swift */,
 				E6E5E5452A9E466700B834E4 /* NetworkMonitor.swift */,
+				E6EA411B2AB8BAE2005612B2 /* ErrorHandler.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				E6807D652A8DAB3C009B32AC /* Constants.swift in Sources */,
 				E606708C2A968CB0004AD6FA /* PlayerDetailsViewModel.swift in Sources */,
 				E606708A2A968763004AD6FA /* FollowingTabViewComponents.swift in Sources */,
+				E6EA411C2AB8BAE2005612B2 /* ErrorHandler.swift in Sources */,
 				E6083FED2A9FBB8200315775 /* TeamDetailsOrientationView.swift in Sources */,
 				E6A1E7B92A8EACD0005C3C44 /* PlayersTabViewModel.swift in Sources */,
 			);

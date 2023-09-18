@@ -27,6 +27,8 @@ import SwiftUI
     var buttonAction: () -> Void {
         isFollowed ? unfollow : follow
     }
+    @Published var errorMessage: String? = ""
+    @Published var hasError: Bool = false
 
     init(team: TeamDetails) {
         self.selectedYear = 2022
@@ -38,14 +40,8 @@ import SwiftUI
         NetworkManager.shared.fetchData(
             endpoint: EndpointBuilder.shared.getGamesURL(season: selectedYear, teamId: team.id),
             type: ResultsPage<Game>.self
-        ) { result in
-            if let result = result {
-                if result.data.count < 5{
-                    self.games = result.data
-                } else {
-                    self.games = Array(result.data[0..<5])
-                }
-            }
+        ) { [weak self] result in
+            self?.handleResult(result: result)
         }
     }
     func follow() {
@@ -56,6 +52,34 @@ import SwiftUI
     func unfollow() {
         CoreDataManager.shared.deleteTeamById(with: Int32(team.id))
         isFollowed = false
+    }
+
+    private func handleResult(result: Result<ResultsPage<Game>, ErrorHandler.NetworkError>) {
+        switch result {
+        case .success(let result):
+            if result.data.count < 5{
+                self.games = result.data
+            } else {
+                self.games = Array(result.data[0..<5])
+            }
+
+        case .failure(let error):
+            self.handle(error: error)
+        }
+    }
+
+    private func handle(error: ErrorHandler.NetworkError) {
+        switch error {
+        case .notFound:
+            errorMessage = TextConstants.notFoundText
+        case .badRequest:
+            errorMessage = TextConstants.badRequestText
+        case .serverError:
+            errorMessage = TextConstants.serverErrorText
+        default:
+            errorMessage = TextConstants.unknownErrorText
+        }
+        hasError = true
     }
 }
 

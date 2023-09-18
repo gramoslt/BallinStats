@@ -66,3 +66,10 @@ enum NoNetworkViewConstants {
     public static let imageWidth = CGFloat(110)
     public static let imageHeight = CGFloat(100)
 }
+
+enum TextConstants {
+    public static let notFoundText =  "Resource not found."
+    public static let badRequestText =  "Bad request."
+    public static let serverErrorText =  "Server Error."
+    public static let unknownErrorText =  "An unknown error occurred."
+}
