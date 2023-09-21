@@ -78,7 +78,7 @@ import SwiftUI
 
         state = .isLoading
 
-        NetworkManager.shared.fetchData(
+        LiveNetworkManager.shared.fetchData(
             endpoint: EndpointBuilder.shared.getAllPlayersURL(page: currentPage, searchText: searchText),
             type: ResultsPage<Player>.self
         ) { [weak self] result in

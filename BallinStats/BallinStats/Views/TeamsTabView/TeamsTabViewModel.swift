@@ -34,7 +34,7 @@ enum Division: String, CaseIterable, Identifiable {
     }
 
     func fetchTeams(withPage page: Int) {
-        NetworkManager.shared.fetchData(
+        LiveNetworkManager.shared.fetchData(
             endpoint: EndpointBuilder.shared.getAllTeamsURL(page: page),
             type: ResultsPage<TeamDetails>.self
         ) { [weak self] result in

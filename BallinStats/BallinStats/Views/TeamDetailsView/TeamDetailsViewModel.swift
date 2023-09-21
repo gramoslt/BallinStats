@@ -37,7 +37,7 @@ import SwiftUI
     }
 
     func fetchFiveGames() {
-        NetworkManager.shared.fetchData(
+        LiveNetworkManager.shared.fetchData(
             endpoint: EndpointBuilder.shared.getGamesURL(season: selectedYear, teamId: team.id),
             type: ResultsPage<Game>.self
         ) { [weak self] result in

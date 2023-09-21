@@ -39,7 +39,7 @@ import SwiftUI
     @Published var hasError: Bool = false
 
     func fetchPlayerStats() {
-        NetworkManager.shared.fetchData(
+        LiveNetworkManager.shared.fetchData(
             endpoint: EndpointBuilder.shared.getPlayerSeasonAveragesURL(season: nil, playerId: player.id),
             type: ResultsPage<PlayerStats>.self
         ) { [weak self] result in
