@@ -9,7 +9,7 @@ import Foundation
 
 protocol NetworkManager {
     typealias NetworkResult<T> = Result<T, ErrorHandler.NetworkError>
-    var session: URLSession { get }
+    var session: URLSessionProtocol { get }
 
     func fetchData<T: Codable>(endpoint: URL?, type: T.Type, completion: @escaping (NetworkResult<T>) -> Void)
 
@@ -21,9 +21,16 @@ protocol NetworkManager {
     func handleData<T: Codable>(type: T.Type, data: Data?, completion: @escaping (NetworkResult<T>) -> Void)
 }
 
-class MockNetworkManager: NetworkManager {
-    
-    var session: URLSessionProtocol
+class MockNetworkManager: NetworkManager  {
+    internal var session: URLSessionProtocol
+
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
+
+    func fetchData<T: Codable>(endpoint: URL?, type: T.Type, completion: @escaping (NetworkResult<T>) -> Void) {
+        // lo que hace mi funcion
+    }
 
     func handleResponse<T: Codable>(type: T.Type, data: Data?, response: URLResponse?, completion: @escaping (NetworkResult<T>) -> Void) {
         // lo que hace mi funcion
@@ -33,19 +40,13 @@ class MockNetworkManager: NetworkManager {
         // lo que hace mi funcion
     }
 
-    func fetchData<T: Codable>(endpoint: URL?, type: T.Type, completion: @escaping (NetworkResult<T>) -> Void) {
-        // lo que hace mi funcion
-    }
 }
 
 class LiveNetworkManager: NetworkManager {
-
-    internal let session : URLSession
+    var session: URLSessionProtocol
     static let shared: LiveNetworkManager = LiveNetworkManager()
 
-    init (
-        session: URLSession = URLSession.shared
-    ) {
+    init (session: URLSession = URLSession.shared) {
         self.session = session
     }
 
