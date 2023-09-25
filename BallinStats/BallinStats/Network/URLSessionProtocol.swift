@@ -15,9 +15,15 @@ protocol URLSessionProtocol {
 extension URLSession: URLSessionProtocol {
 
     func dataTask(with urlRequest: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        let task = dataTask(with: urlRequest) { (data, response, error) in
+        let task: URLSessionDataTask = dataTask(with: urlRequest) { (data, response, error) in
                 completionHandler(data, response, error)
         }
         task.resume()
+    }
+}
+
+class URLSessionMock: URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        completionHandler(nil, nil, nil)
     }
 }

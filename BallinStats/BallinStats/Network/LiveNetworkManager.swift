@@ -60,7 +60,6 @@ class LiveNetworkManager: NetworkManager {
                 self.handleResponse(type: type, data: data, response: response, completion: completion)
             }
         }
-        task.resume()
     }
 
     internal func handleResponse<T: Codable>(type: T.Type, data: Data?, response: URLResponse?, completion: @escaping (NetworkResult<T>) -> Void) {
