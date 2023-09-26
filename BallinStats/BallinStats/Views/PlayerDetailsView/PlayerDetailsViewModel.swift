@@ -10,9 +10,11 @@ import SwiftUI
 
 @MainActor class PlayerDetailsViewModel: ObservableObject {
     var player: Player
+    var networkManager: NetworkManager
 
-    init(player: Player) {
+    init(player: Player, networkManager: NetworkManager = LiveNetworkManager.shared) {
         self.player = player
+        self.networkManager = networkManager
     }
     @Published var ppg: Float = 0
     @Published var rpg: Float = 0
@@ -39,7 +41,7 @@ import SwiftUI
     @Published var hasError: Bool = false
 
     func fetchPlayerStats() {
-        LiveNetworkManager.shared.fetchData(
+        networkManager.fetchData(
             endpoint: EndpointBuilder.shared.getPlayerSeasonAveragesURL(season: nil, playerId: player.id),
             type: ResultsPage<PlayerStats>.self
         ) { [weak self] result in
