@@ -11,6 +11,7 @@ import SwiftUI
 @MainActor class TeamDetailsViewModel: ObservableObject {
     @Published var games: [Game] = []
     var team: TeamDetails
+    var networkManager: NetworkManager
     @Published var selectedYear: Int {
         didSet {
             games.removeAll()
@@ -30,14 +31,15 @@ import SwiftUI
     @Published var errorMessage: String? = ""
     @Published var hasError: Bool = false
 
-    init(team: TeamDetails) {
+    init(team: TeamDetails, networkManager: NetworkManager = LiveNetworkManager.shared) {
         self.selectedYear = 2022
         self.team = team
         self.isFollowed = CoreDataManager.shared.checkIfItemExist(id: team.id)
+        self.networkManager = networkManager
     }
 
     func fetchFiveGames() {
-        LiveNetworkManager.shared.fetchData(
+        networkManager.fetchData(
             endpoint: EndpointBuilder.shared.getGamesURL(season: selectedYear, teamId: team.id),
             type: ResultsPage<Game>.self
         ) { [weak self] result in

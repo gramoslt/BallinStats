@@ -25,6 +25,7 @@ enum Division: String, CaseIterable, Identifiable {
     @Published var selectedFilter: Division = .AllTeams
     @Published var errorMessage: String? = ""
     @Published var hasError: Bool = false
+    var networkManager: NetworkManager
     var filteredTeams: [TeamDetails] {
         if selectedFilter == .AllTeams {
             return teams
@@ -33,8 +34,12 @@ enum Division: String, CaseIterable, Identifiable {
         }
     }
 
+    init(networkManager: NetworkManager = LiveNetworkManager.shared) {
+        self.networkManager = networkManager
+    }
+
     func fetchTeams(withPage page: Int) {
-        LiveNetworkManager.shared.fetchData(
+        networkManager.fetchData(
             endpoint: EndpointBuilder.shared.getAllTeamsURL(page: page),
             type: ResultsPage<TeamDetails>.self
         ) { [weak self] result in

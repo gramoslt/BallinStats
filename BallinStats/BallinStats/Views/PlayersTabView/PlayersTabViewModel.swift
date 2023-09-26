@@ -30,6 +30,7 @@ import SwiftUI
     var subscriptions = Set<AnyCancellable>()
     @Published var errorMessage: String? = ""
     @Published var hasError: Bool = false
+    var networkManager: NetworkManager
 
     @ViewBuilder var loadingStateView: some View {
         switch self.state {
@@ -49,7 +50,9 @@ import SwiftUI
         }
     }
 
-    init() {
+    init(networkManager: NetworkManager = LiveNetworkManager.shared) {
+        self.networkManager = networkManager
+
         $searchText
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)
@@ -78,7 +81,7 @@ import SwiftUI
 
         state = .isLoading
 
-        LiveNetworkManager.shared.fetchData(
+        networkManager.fetchData(
             endpoint: EndpointBuilder.shared.getAllPlayersURL(page: currentPage, searchText: searchText),
             type: ResultsPage<Player>.self
         ) { [weak self] result in
