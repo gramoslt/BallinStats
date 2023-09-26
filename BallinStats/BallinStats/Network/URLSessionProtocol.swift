@@ -23,7 +23,11 @@ extension URLSession: URLSessionProtocol {
 }
 
 class URLSessionMock: URLSessionProtocol {
+    var data: Data?
+    var response: URLResponse?
+    var error: Error?
+
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        completionHandler(nil, nil, nil)
+        completionHandler(data, response, error)
     }
 }
