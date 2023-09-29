@@ -37,8 +37,12 @@ class NetworkManager {
         switch httpResponse.statusCode {
         case 200...299:
             handleData(type: type, data: data, completion: completion)
+        case 400:
+            completion(.failure(.badRequest))
         case 404:
             completion(.failure(.notFound))
+        case 429...503:
+            completion(.failure(.serverError))
         default:
             completion(.failure(.unknown))
         }
