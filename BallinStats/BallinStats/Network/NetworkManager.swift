@@ -11,7 +11,7 @@ class NetworkManager {
     typealias NetworkResult<T> = Result<T, ErrorHandler.NetworkError>
     var session: URLSessionProtocol
 
-    init (session: URLSession) {
+    init (session: URLSessionProtocol) {
         self.session = session
     }
 
