@@ -50,7 +50,7 @@ import SwiftUI
         }
     }
 
-    init(networkManager: NetworkManager = LiveNetworkManager.shared) {
+    init(networkManager: NetworkManager = NetworkManager(session: .shared)) {
         self.networkManager = networkManager
 
         $searchText
