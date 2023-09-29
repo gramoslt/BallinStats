@@ -51,9 +51,9 @@ struct TabNavigationView: View {
 struct TabNavigationView_Previews: PreviewProvider {
     static var previews: some View {
         TabNavigationView()
-            .environmentObject(NetworkMonitor.init(isConnected: true))
+            .environmentObject(NetworkMonitor.init())
         TabNavigationView()
             .preferredColorScheme(.dark)
-            .environmentObject(NetworkMonitor.init(isConnected: true))
+            .environmentObject(NetworkMonitor.init())
     }
 }

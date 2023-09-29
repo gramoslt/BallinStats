@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Player: Codable, Identifiable {
+struct Player: Codable, Identifiable, Equatable {
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        lhs.id == rhs.id && lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName && lhs.position == rhs.position && lhs.heightFeet == rhs.heightFeet &&
+        lhs.heightInches == rhs.heightInches && lhs.weightPounds == rhs.weightPounds && lhs.team == rhs.team
+    }
+
     let id: Int
     let firstName: String
     let lastName: String
@@ -57,4 +62,13 @@ struct PlayerStats: Codable, Identifiable{
         case reb
         case ast
     }
+}
+
+extension PlayerStats {
+    static let mock = PlayerStats(
+        id: 237,
+        pts: 26.97,
+        reb: 8.54,
+        ast: 7.38
+    )
 }
