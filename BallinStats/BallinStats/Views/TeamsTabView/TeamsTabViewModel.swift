@@ -34,7 +34,7 @@ enum Division: String, CaseIterable, Identifiable {
         }
     }
 
-    init(networkManager: NetworkManager = LiveNetworkManager.shared) {
+    init(networkManager: NetworkManager = NetworkManager(session: .shared)) {
         self.networkManager = networkManager
     }
 
