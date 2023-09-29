@@ -9,23 +9,23 @@ import Foundation
 
 protocol URLSessionProtocol {
 
-    func dataTask(with request: URLRequest, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> Resumable
+    func dataTask(with request: URLRequest, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
 }
 
 extension URLSession: URLSessionProtocol {
 
-    func dataTask(with request: URLRequest, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> Resumable {
+    func dataTask(with request: URLRequest, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
                 return dataTask(with: request, completionHandler: completion)
     }
 }
 
-protocol Resumable {
+protocol URLSessionDataTaskProtocol {
     func resume()
 }
 
-extension URLSessionDataTask: Resumable { }
+extension URLSessionDataTask: URLSessionDataTaskProtocol { }
 
-class MockURLSessionDataTask: Resumable {
+class MockURLSessionDataTask: URLSessionDataTaskProtocol {
     func resume() { }
 }
 
@@ -40,7 +40,7 @@ class URLSessionMock: URLSessionProtocol {
         self.error = error
     }
 
-    func dataTask(with request: URLRequest, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> Resumable {
+    func dataTask(with request: URLRequest, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
         completion(data, response, error)
         return MockURLSessionDataTask()
     }
