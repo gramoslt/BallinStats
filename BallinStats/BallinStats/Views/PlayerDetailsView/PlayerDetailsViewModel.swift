@@ -12,7 +12,7 @@ import SwiftUI
     var player: Player
     var networkManager: NetworkManager
 
-    init(player: Player, networkManager: NetworkManager = NetworkManager(session: .shared)) {
+    init(player: Player, networkManager: NetworkManager = NetworkManager(session: URLSession.shared)) {
         self.player = player
         self.networkManager = networkManager
     }

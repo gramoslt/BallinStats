@@ -27,21 +27,21 @@ extension URLSessionDataTask: Resumable { }
 
 class MockURLSessionDataTask: Resumable {
     func resume() { }
-    
-    class URLSessionMock: URLSessionProtocol {
-        var data: Data?
-        var response: URLResponse?
-        var error: Error?
-        
-        init(data: Data? = nil, response: URLResponse? = nil, error: Error? = nil) {
-            self.data = data
-            self.response = response
-            self.error = error
-        }
-        
-        func dataTask(with request: URLRequest, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> Resumable {
-            completion(data, response, error)
-            return MockURLSessionDataTask()
-        }
+}
+
+class URLSessionMock: URLSessionProtocol {
+    var data: Data?
+    var response: URLResponse?
+    var error: Error?
+
+    init(data: Data? = nil, response: URLResponse? = nil, error: Error? = nil) {
+        self.data = data
+        self.response = response
+        self.error = error
+    }
+
+    func dataTask(with request: URLRequest, completion: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> Resumable {
+        completion(data, response, error)
+        return MockURLSessionDataTask()
     }
 }

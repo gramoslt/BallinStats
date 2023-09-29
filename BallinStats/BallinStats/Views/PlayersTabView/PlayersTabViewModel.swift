@@ -50,7 +50,7 @@ import SwiftUI
         }
     }
 
-    init(networkManager: NetworkManager = NetworkManager(session: .shared)) {
+    init(networkManager: NetworkManager = NetworkManager(session: URLSession.shared)) {
         self.networkManager = networkManager
 
         $searchText

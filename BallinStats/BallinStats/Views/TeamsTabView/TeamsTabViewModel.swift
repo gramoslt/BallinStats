@@ -34,7 +34,7 @@ enum Division: String, CaseIterable, Identifiable {
         }
     }
 
-    init(networkManager: NetworkManager = NetworkManager(session: .shared)) {
+    init(networkManager: NetworkManager = NetworkManager(session: URLSession.shared)) {
         self.networkManager = networkManager
     }
 

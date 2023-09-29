@@ -9,8 +9,12 @@ import XCTest
 @testable import BallinStats
 
 final class PlayerDetailsViewModelTests: XCTestCase {
+    var data: Data?
+    var error: Error?
+    var response: URLResponse?
+
     func test_ViewModel_Not_Nil_Calculated_Variables() async {
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: MockNetworkManager())
+        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: NetworkManager(session: URLSessionMock()))
         let heightFeet = await sut.heightFeet
         let weightPounds = await sut.weightPounds
         let heightInches = await sut.heightInches
@@ -21,8 +25,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     }
 
     func test_successful_fetch_player_stats() async {
-        let urlSessionMock = URLSessionMock()
-        let playerStats = """
+        data = """
         {
           "data": [
             {
@@ -34,15 +37,16 @@ final class PlayerDetailsViewModelTests: XCTestCase {
           ]
         }
         """.data(using: .utf8)
-        urlSessionMock.data = playerStats
-        urlSessionMock.response = HTTPURLResponse(
+        response = HTTPURLResponse(
             url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
             statusCode: 200,
             httpVersion: "1.1",
             headerFields: nil
         )!
-        let mockNetworkManager = MockNetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: mockNetworkManager)
+        let urlSessionMock = URLSessionMock(data: data, response: response)
+
+        let networkManager = NetworkManager(session: urlSessionMock)
+        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let playerPts = await sut.ppg
@@ -55,80 +59,77 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     }
 
     func test_fetch_player_stats_not_found() async {
-        let urlSessionMock = URLSessionMock()
-        urlSessionMock.response = HTTPURLResponse(
+        response = HTTPURLResponse(
             url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
             statusCode: 404,
             httpVersion: "1.1",
             headerFields: nil
         )!
-        let mockNetworkManager = MockNetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: mockNetworkManager)
+        let urlSessionMock = URLSessionMock(response: response)
+        let networkManager = NetworkManager(session: urlSessionMock)
+        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let hasError = await sut.hasError
         let errorMessage = await sut.errorMessage
-
 
         XCTAssertTrue(hasError)
         XCTAssertEqual(errorMessage, TextConstants.notFoundText)
     }
 
     func test_fetch_player_stats_bad_request() async {
-        let urlSessionMock = URLSessionMock()
-        urlSessionMock.response = HTTPURLResponse(
+
+        response = HTTPURLResponse(
             url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
             statusCode: 400,
             httpVersion: "1.1",
             headerFields: nil
         )!
-        let mockNetworkManager = MockNetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: mockNetworkManager)
+        let urlSessionMock = URLSessionMock(response: response)
+        let networkManager = NetworkManager(session: urlSessionMock)
+        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let hasError = await sut.hasError
         let errorMessage = await sut.errorMessage
-
 
         XCTAssertTrue(hasError)
         XCTAssertEqual(errorMessage, TextConstants.badRequestText)
     }
 
     func test_fetch_player_stats_server_error() async {
-        let urlSessionMock = URLSessionMock()
-        urlSessionMock.response = HTTPURLResponse(
+        response = HTTPURLResponse(
             url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
             statusCode: 429,
             httpVersion: "1.1",
             headerFields: nil
         )!
-        let mockNetworkManager = MockNetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: mockNetworkManager)
+        let urlSessionMock = URLSessionMock(response: response)
+        let networkManager = NetworkManager(session: urlSessionMock)
+        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let hasError = await sut.hasError
         let errorMessage = await sut.errorMessage
-
 
         XCTAssertTrue(hasError)
         XCTAssertEqual(errorMessage, TextConstants.serverErrorText)
     }
 
     func test_fetch_player_stats_unknown_error() async {
-        let urlSessionMock = URLSessionMock()
-        urlSessionMock.response = HTTPURLResponse(
+        response = HTTPURLResponse(
             url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
             statusCode: 700,
             httpVersion: "1.1",
             headerFields: nil
         )!
-        let mockNetworkManager = MockNetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: mockNetworkManager)
+        let urlSessionMock = URLSessionMock(response: response)
+        let networkManager = NetworkManager(session: urlSessionMock)
+        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let hasError = await sut.hasError
         let errorMessage = await sut.errorMessage
-
 
         XCTAssertTrue(hasError)
         XCTAssertEqual(errorMessage, TextConstants.unknownErrorText)

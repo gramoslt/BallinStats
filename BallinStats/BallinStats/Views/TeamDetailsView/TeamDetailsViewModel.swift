@@ -31,7 +31,7 @@ import SwiftUI
     @Published var errorMessage: String? = ""
     @Published var hasError: Bool = false
 
-    init(team: TeamDetails, networkManager: NetworkManager = NetworkManager(session: .shared)) {
+    init(team: TeamDetails, networkManager: NetworkManager = NetworkManager(session: URLSession.shared)) {
         self.selectedYear = 2022
         self.team = team
         self.isFollowed = CoreDataManager.shared.checkIfItemExist(id: team.id)
