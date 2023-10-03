@@ -6,7 +6,19 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import BallinStats
+
+class MockResponse {
+    static func createResponse(statusCode: Int)-> HTTPURLResponse{
+        HTTPURLResponse(
+            url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
+            statusCode: statusCode,
+            httpVersion: "1.1",
+            headerFields: nil
+        )!
+    }
+}
 
 final class PlayerDetailsViewModelTests: XCTestCase {
     var data: Data?
@@ -18,10 +30,34 @@ final class PlayerDetailsViewModelTests: XCTestCase {
         let heightFeet = await sut.heightFeet
         let weightPounds = await sut.weightPounds
         let heightInches = await sut.heightInches
+        let backgroundColor = await sut.backgroundColor
+        let expectedBackgroundColor = Color("\(Player.mock.team.abbreviation)Color")
 
         XCTAssertNotNil(heightFeet)
         XCTAssertNotNil(weightPounds)
         XCTAssertNotNil(heightInches)
+        XCTAssertEqual(backgroundColor, expectedBackgroundColor)
+    }
+
+    func test_ViewModel_Calculated_Variables_Are_Nil() async {
+        let tempPlayer = Player(
+            id: 1,
+            firstName: "",
+            lastName: "",
+            position: "",
+            heightFeet: nil,
+            heightInches: nil,
+            weightPounds: nil,
+            team: TeamDetails.mockATL
+        )
+        let sut = await PlayerDetailsViewModel(player: tempPlayer, networkManager: NetworkManager(session: URLSessionMock()))
+        let heightFeet = await sut.heightFeet
+        let weightPounds = await sut.weightPounds
+        let heightInches = await sut.heightInches
+
+        XCTAssertEqual(heightFeet, PlayerDetailsViewConstants.notAvailableString)
+        XCTAssertEqual(weightPounds, PlayerDetailsViewConstants.notAvailableString)
+        XCTAssertEqual(heightInches, PlayerDetailsViewConstants.notAvailableString)
     }
 
     func test_successful_fetch_player_stats() async {
@@ -37,12 +73,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
           ]
         }
         """.data(using: .utf8)
-        response = HTTPURLResponse(
-            url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
-            statusCode: 200,
-            httpVersion: "1.1",
-            headerFields: nil
-        )!
+        response = MockResponse.createResponse(statusCode: 200)
         let urlSessionMock = URLSessionMock(data: data, response: response)
 
         let networkManager = NetworkManager(session: urlSessionMock)
@@ -59,12 +90,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     }
 
     func test_fetch_player_stats_not_found() async {
-        response = HTTPURLResponse(
-            url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
-            statusCode: 404,
-            httpVersion: "1.1",
-            headerFields: nil
-        )!
+        response = MockResponse.createResponse(statusCode: 404)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
@@ -79,12 +105,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
 
     func test_fetch_player_stats_bad_request() async {
 
-        response = HTTPURLResponse(
-            url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
-            statusCode: 400,
-            httpVersion: "1.1",
-            headerFields: nil
-        )!
+        response = MockResponse.createResponse(statusCode: 400)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
@@ -98,12 +119,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     }
 
     func test_fetch_player_stats_server_error() async {
-        response = HTTPURLResponse(
-            url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
-            statusCode: 429,
-            httpVersion: "1.1",
-            headerFields: nil
-        )!
+        response = MockResponse.createResponse(statusCode: 429)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
@@ -117,12 +133,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     }
 
     func test_fetch_player_stats_unknown_error() async {
-        response = HTTPURLResponse(
-            url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
-            statusCode: 700,
-            httpVersion: "1.1",
-            headerFields: nil
-        )!
+        response = MockResponse.createResponse(statusCode: 701)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)

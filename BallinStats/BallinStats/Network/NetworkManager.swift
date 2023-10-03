@@ -28,7 +28,7 @@ class NetworkManager {
         task.resume()
     }
 
-    internal func handleResponse<T: Codable>(type: T.Type, data: Data?, response: URLResponse?, completion: @escaping (NetworkResult<T>) -> Void) {
+    private func handleResponse<T: Codable>(type: T.Type, data: Data?, response: URLResponse?, completion: @escaping (NetworkResult<T>) -> Void) {
         guard let httpResponse = response as? HTTPURLResponse else {
             completion(.failure(.unknown))
             return
@@ -48,7 +48,7 @@ class NetworkManager {
         }
     }
 
-    internal func handleData<T: Codable>(type: T.Type, data: Data?, completion: @escaping (NetworkResult<T>) -> Void) {
+    private func handleData<T: Codable>(type: T.Type, data: Data?, completion: @escaping (NetworkResult<T>) -> Void) {
         guard let data = data else {
             completion(.failure(.unknown))
             return
