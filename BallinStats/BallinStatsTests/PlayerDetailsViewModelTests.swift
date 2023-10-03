@@ -9,21 +9,11 @@ import XCTest
 import SwiftUI
 @testable import BallinStats
 
-class MockResponse {
-    static func createResponse(statusCode: Int)-> HTTPURLResponse{
-        HTTPURLResponse(
-            url: URL(string: "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237")!,
-            statusCode: statusCode,
-            httpVersion: "1.1",
-            headerFields: nil
-        )!
-    }
-}
-
 final class PlayerDetailsViewModelTests: XCTestCase {
     var data: Data?
     var error: Error?
     var response: URLResponse?
+    var urlString: String = "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237"
 
     func test_ViewModel_Not_Nil_Calculated_Variables() async {
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: NetworkManager(session: URLSessionMock()))
@@ -73,7 +63,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
           ]
         }
         """.data(using: .utf8)
-        response = MockResponse.createResponse(statusCode: 200)
+        response = MockResponse.createResponse(urlString: urlString, statusCode: 200)
         let urlSessionMock = URLSessionMock(data: data, response: response)
 
         let networkManager = NetworkManager(session: urlSessionMock)
@@ -90,7 +80,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     }
 
     func test_fetch_player_stats_not_found() async {
-        response = MockResponse.createResponse(statusCode: 404)
+        response = MockResponse.createResponse(urlString: urlString, statusCode: 404)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
@@ -105,7 +95,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
 
     func test_fetch_player_stats_bad_request() async {
 
-        response = MockResponse.createResponse(statusCode: 400)
+        response = MockResponse.createResponse(urlString: urlString, statusCode: 400)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
@@ -119,7 +109,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     }
 
     func test_fetch_player_stats_server_error() async {
-        response = MockResponse.createResponse(statusCode: 429)
+        response = MockResponse.createResponse(urlString: urlString, statusCode: 429)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
@@ -133,7 +123,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     }
 
     func test_fetch_player_stats_unknown_error() async {
-        response = MockResponse.createResponse(statusCode: 701)
+        response = MockResponse.createResponse(urlString: urlString, statusCode: 701)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
         let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)

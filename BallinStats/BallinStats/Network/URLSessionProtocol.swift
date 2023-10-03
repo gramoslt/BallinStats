@@ -45,3 +45,14 @@ class URLSessionMock: URLSessionProtocol {
         return MockURLSessionDataTask()
     }
 }
+
+class MockResponse {
+    static func createResponse(urlString: String,statusCode: Int)-> HTTPURLResponse{
+        HTTPURLResponse(
+            url: URL(string: urlString)!,
+            statusCode: statusCode,
+            httpVersion: "1.1",
+            headerFields: nil
+        )!
+    }
+}
