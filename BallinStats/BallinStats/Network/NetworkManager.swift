@@ -17,6 +17,7 @@ class NetworkManager {
 
     func fetchData<T: Codable>(endpoint: URL?, type: T.Type, completion: @escaping (NetworkResult<T>) -> Void) {
         guard let url = endpoint else {
+            completion(.failure(.badURL))
             return
         }
         let request = URLRequest(url: url)
@@ -30,7 +31,7 @@ class NetworkManager {
 
     private func handleResponse<T: Codable>(type: T.Type, data: Data?, response: URLResponse?, completion: @escaping (NetworkResult<T>) -> Void) {
         guard let httpResponse = response as? HTTPURLResponse else {
-            completion(.failure(.unknown))
+            completion(.failure(.badResponse))
             return
         }
 
@@ -50,7 +51,7 @@ class NetworkManager {
 
     private func handleData<T: Codable>(type: T.Type, data: Data?, completion: @escaping (NetworkResult<T>) -> Void) {
         guard let data = data else {
-            completion(.failure(.unknown))
+            completion(.failure(.noDataError))
             return
         }
         let decoder = Decoder()
@@ -59,7 +60,7 @@ class NetworkManager {
             completion(.success(model))
         } catch let error {
             print("NetworkManager: Decoding error: \(error)")
-            completion(.failure(.unknown))
+            completion(.failure(.decodingError))
         }
     }
 }

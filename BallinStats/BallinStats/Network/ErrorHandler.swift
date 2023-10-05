@@ -13,5 +13,9 @@ struct ErrorHandler {
         case badRequest
         case serverError
         case unknown
+        case badResponse
+        case decodingError
+        case badURL
+        case noDataError
     }
 }
