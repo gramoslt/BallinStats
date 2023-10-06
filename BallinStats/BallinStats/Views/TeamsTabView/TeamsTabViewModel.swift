@@ -38,6 +38,10 @@ enum Division: String, CaseIterable, Identifiable {
         self.networkManager = networkManager
     }
 
+    func setTeams(teams: [TeamDetails]) { self.teams = teams }
+
+    func setFilter(filter: Division) { self.selectedFilter = filter }
+
     func fetchTeams(withPage page: Int) {
         networkManager.fetchData(
             endpoint: EndpointBuilder.shared.getAllTeamsURL(page: page),
@@ -50,7 +54,7 @@ enum Division: String, CaseIterable, Identifiable {
     private func handleResult(result: Result<ResultsPage<TeamDetails>, ErrorHandler.NetworkError>) {
         switch result {
         case .success(let result):
-            self.teams = result.data
+            setTeams(teams: result.data)
         case .failure(let error):
             self.handle(error: error)
         }
