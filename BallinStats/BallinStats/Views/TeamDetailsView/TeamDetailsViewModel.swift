@@ -38,6 +38,14 @@ import SwiftUI
         self.networkManager = networkManager
     }
 
+    func setYear(year: Int) {
+        self.selectedYear = year
+    }
+
+    func setIsFollowed(isFollowed: Bool) {
+        self.isFollowed = isFollowed
+    }
+
     func fetchFiveGames() {
         networkManager.fetchData(
             endpoint: EndpointBuilder.shared.getGamesURL(season: selectedYear, teamId: team.id),
