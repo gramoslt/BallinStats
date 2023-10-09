@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import SwiftUI
 
 @MainActor class PlayersTabViewModel: ObservableObject {
     enum BrowsingState: Comparable {
@@ -31,24 +30,6 @@ import SwiftUI
     @Published var errorMessage: String? = ""
     @Published var hasError: Bool = false
     var networkManager: NetworkManager
-
-    @ViewBuilder var loadingStateView: some View {
-        switch self.state {
-        case .good:
-            Color.customBackgroundColor
-                .onAppear {
-                    self.loadMore()
-                }
-        case .isLoading:
-            ProgressView()
-        case .loadedAll:
-            Text("No more results")
-                .foregroundColor(.red)
-        case .error(let message):
-            Text(message)
-                .foregroundColor(.red)
-        }
-    }
 
     init(networkManager: NetworkManager = NetworkManager(session: URLSession.shared)) {
         self.networkManager = networkManager
@@ -119,6 +100,6 @@ import SwiftUI
 
 extension PlayersTabViewModel {
     static let playersMock = [
-        Player.mock
+        Player.mockLebron
     ]
 }

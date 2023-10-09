@@ -22,6 +22,6 @@ struct PlayerDetailsOrientationView: View {
 
 struct PlayerDetailsOrientationView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailsOrientationView(playerDetailsViewModel: PlayerDetailsViewModel(player: Player.mock))
+        PlayerDetailsOrientationView(playerDetailsViewModel: PlayerDetailsViewModel(player: Player.mockLebron))
     }
 }

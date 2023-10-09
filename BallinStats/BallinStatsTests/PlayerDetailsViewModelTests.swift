@@ -16,12 +16,12 @@ final class PlayerDetailsViewModelTests: XCTestCase {
     var urlString: String = "https://www.balldontlie.io/api/v1/season_averages?player_ids[]=237"
 
     func test_ViewModel_Not_Nil_Calculated_Variables() async {
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: NetworkManager(session: URLSessionMock()))
+        let sut = await PlayerDetailsViewModel(player: Player.mockLebron, networkManager: NetworkManager(session: URLSessionMock()))
         let heightFeet = await sut.heightFeet
         let weightPounds = await sut.weightPounds
         let heightInches = await sut.heightInches
         let backgroundColor = await sut.backgroundColor
-        let expectedBackgroundColor = Color("\(Player.mock.team.abbreviation)Color")
+        let expectedBackgroundColor = Color("\(Player.mockLebron.team.abbreviation)Color")
 
         XCTAssertNotNil(heightFeet)
         XCTAssertNotNil(weightPounds)
@@ -67,7 +67,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
         let urlSessionMock = URLSessionMock(data: data, response: response)
 
         let networkManager = NetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
+        let sut = await PlayerDetailsViewModel(player: Player.mockLebron, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let playerPts = await sut.ppg
@@ -83,7 +83,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
         response = MockResponse.createResponse(urlString: urlString, statusCode: 404)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
+        let sut = await PlayerDetailsViewModel(player: Player.mockLebron, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let hasError = await sut.hasError
@@ -98,7 +98,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
         response = MockResponse.createResponse(urlString: urlString, statusCode: 400)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
+        let sut = await PlayerDetailsViewModel(player: Player.mockLebron, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let hasError = await sut.hasError
@@ -112,7 +112,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
         response = MockResponse.createResponse(urlString: urlString, statusCode: 429)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
+        let sut = await PlayerDetailsViewModel(player: Player.mockLebron, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let hasError = await sut.hasError
@@ -126,7 +126,7 @@ final class PlayerDetailsViewModelTests: XCTestCase {
         response = MockResponse.createResponse(urlString: urlString, statusCode: 701)
         let urlSessionMock = URLSessionMock(response: response)
         let networkManager = NetworkManager(session: urlSessionMock)
-        let sut = await PlayerDetailsViewModel(player: Player.mock, networkManager: networkManager)
+        let sut = await PlayerDetailsViewModel(player: Player.mockLebron, networkManager: networkManager)
 
         await sut.fetchPlayerStats()
         let hasError = await sut.hasError

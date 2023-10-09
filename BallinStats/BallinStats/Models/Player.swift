@@ -38,7 +38,7 @@ struct Player: Codable, Identifiable, Equatable {
 }
 
 extension Player {
-    static let mock = Player(
+    static let mockLebron = Player(
         id: 237,
         firstName: "LeBron",
         lastName: "James",
@@ -47,6 +47,17 @@ extension Player {
         heightInches: 8,
         weightPounds: 250,
         team: TeamDetails.mockLAL
+    )
+
+    static let mockTatum = Player(
+        id: 434,
+        firstName: "Jayson",
+        lastName: "Tatum",
+        position: "F",
+        heightFeet: 6,
+        heightInches: 8,
+        weightPounds: 208,
+        team: TeamDetails.mockBOS
     )
 }
 

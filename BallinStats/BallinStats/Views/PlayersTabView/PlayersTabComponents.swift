@@ -21,7 +21,21 @@ struct PlayersList: View {
                         PlayerRow(player: player)
                     }
                 }
-                playersTabViewModel.loadingStateView
+                switch playersTabViewModel.state {
+                case .good:
+                    Color.customBackgroundColor
+                        .onAppear {
+                            playersTabViewModel.loadMore()
+                        }
+                case .isLoading:
+                    ProgressView()
+                case .loadedAll:
+                    Text("No more results")
+                        .foregroundColor(.red)
+                case .error(let message):
+                    Text(message)
+                        .foregroundColor(.red)
+                }
             }
             .listRowBackground(Color.customBackgroundColor)
             .listRowSeparatorTint(.customYellowStroke)

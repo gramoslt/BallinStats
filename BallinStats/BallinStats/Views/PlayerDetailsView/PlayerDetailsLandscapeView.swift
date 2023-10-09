@@ -35,7 +35,7 @@ struct PlayerDetailsLandscapeView: View {
 
 struct PlayerDetailsLandscapeView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailsLandscapeView(playerDetailsViewModel: PlayerDetailsViewModel(player: Player.mock))
+        PlayerDetailsLandscapeView(playerDetailsViewModel: PlayerDetailsViewModel(player: Player.mockLebron))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }

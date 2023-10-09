@@ -33,6 +33,6 @@ struct PlayerDetailsView: View {
 
 struct PlayerDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerDetailsView(playerDetailsViewModel: PlayerDetailsViewModel(player: Player.mock))
+        PlayerDetailsView(playerDetailsViewModel: PlayerDetailsViewModel(player: Player.mockLebron))
     }
 }
