@@ -7,21 +7,107 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E60670822A93C290004AD6FA /* ResultsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670812A93C290004AD6FA /* ResultsPage.swift */; };
+		E60670842A93C2E0004AD6FA /* PageMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670832A93C2E0004AD6FA /* PageMetaData.swift */; };
+		E60670862A93D6FE004AD6FA /* EndpointBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670852A93D6FE004AD6FA /* EndpointBuilder.swift */; };
+		E60670882A9683CC004AD6FA /* FollowingTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670872A9683CC004AD6FA /* FollowingTabViewModel.swift */; };
+		E606708A2A968763004AD6FA /* FollowingTabViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670892A968763004AD6FA /* FollowingTabViewComponents.swift */; };
+		E606708C2A968CB0004AD6FA /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606708B2A968CB0004AD6FA /* PlayerDetailsViewModel.swift */; };
+		E606708E2A96958C004AD6FA /* PlayerDetailsViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E606708D2A96958C004AD6FA /* PlayerDetailsViewComponents.swift */; };
+		E60670B12A97E4AF004AD6FA /* BallinStats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E60670AF2A97E4AF004AD6FA /* BallinStats.xcdatamodeld */; };
+		E60670B32A97E5BE004AD6FA /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60670B22A97E5BE004AD6FA /* CoreDataManager.swift */; };
+		E6083FED2A9FBB8200315775 /* TeamDetailsOrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6083FEC2A9FBB8200315775 /* TeamDetailsOrientationView.swift */; };
+		E6083FEF2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6083FEE2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift */; };
+		E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */; };
+		E62235752AC34A2100D5A7B3 /* BallinStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62235742AC34A2100D5A7B3 /* BallinStatsTests.swift */; };
+		E62555672AA1051100BBE6C4 /* PlayerDetailsOrientationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62555662AA1051100BBE6C4 /* PlayerDetailsOrientationView.swift */; };
+		E651A5FC2AA105810018C21C /* PlayerDetailsLandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E651A5FB2AA105810018C21C /* PlayerDetailsLandscapeView.swift */; };
+		E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */; };
+		E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE792A8FBFF900E4C096 /* Colors.swift */; };
+		E668BE7C2A8FC87900E4C096 /* PlayersTabComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E668BE7B2A8FC87900E4C096 /* PlayersTabComponents.swift */; };
+		E67A2D5D2A93B2F300BA6D39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67A2D5C2A93B2F300BA6D39 /* NetworkManager.swift */; };
+		E67A2D5F2A93B82B00BA6D39 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67A2D5E2A93B82B00BA6D39 /* Decoder.swift */; };
+		E6807D5A2A8DA069009B32AC /* TabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D592A8DA069009B32AC /* TabNavigationView.swift */; };
+		E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */; };
+		E6807D5E2A8DA324009B32AC /* TeamsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */; };
+		E6807D602A8DA333009B32AC /* FollowingTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D5F2A8DA333009B32AC /* FollowingTabView.swift */; };
+		E6807D652A8DAB3C009B32AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D642A8DAB3C009B32AC /* Constants.swift */; };
+		E6807D672A8DB971009B32AC /* TeamDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6807D662A8DB971009B32AC /* TeamDetails.swift */; };
 		E68FDB042A8D5A7D00A9AE60 /* BallinStatsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FDB032A8D5A7D00A9AE60 /* BallinStatsApp.swift */; };
-		E68FDB062A8D5A7D00A9AE60 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68FDB052A8D5A7D00A9AE60 /* ContentView.swift */; };
 		E68FDB082A8D5A7F00A9AE60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E68FDB072A8D5A7F00A9AE60 /* Assets.xcassets */; };
 		E68FDB0B2A8D5A7F00A9AE60 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E68FDB0A2A8D5A7F00A9AE60 /* Preview Assets.xcassets */; };
+		E6A1E7B42A8E9931005C3C44 /* TeamsTabComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7B32A8E9931005C3C44 /* TeamsTabComponents.swift */; };
+		E6A1E7B72A8EA397005C3C44 /* TeamDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7B62A8EA397005C3C44 /* TeamDetailsView.swift */; };
+		E6A1E7B92A8EACD0005C3C44 /* PlayersTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7B82A8EACD0005C3C44 /* PlayersTabViewModel.swift */; };
+		E6A1E7BD2A8EB26D005C3C44 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A1E7BC2A8EB26D005C3C44 /* Player.swift */; };
+		E6D7D0A02A8FF8DD007CD7AB /* TeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7D09F2A8FF8DD007CD7AB /* TeamDetailsViewModel.swift */; };
+		E6D7D0A22A8FFA11007CD7AB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7D0A12A8FFA11007CD7AB /* Game.swift */; };
+		E6D7D0A42A9001AE007CD7AB /* TeamDetailsViewComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */; };
+		E6E5E5462A9E466700B834E4 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5E5452A9E466700B834E4 /* NetworkMonitor.swift */; };
+		E6E5E54A2A9E48C800B834E4 /* NoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E5E5492A9E48C800B834E4 /* NoNetworkView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E62235762AC34A2100D5A7B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E68FDAF82A8D5A7D00A9AE60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E68FDAFF2A8D5A7D00A9AE60;
+			remoteInfo = BallinStats;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		E60670812A93C290004AD6FA /* ResultsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsPage.swift; sourceTree = "<group>"; };
+		E60670832A93C2E0004AD6FA /* PageMetaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageMetaData.swift; sourceTree = "<group>"; };
+		E60670852A93D6FE004AD6FA /* EndpointBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EndpointBuilder.swift; path = BallinStats/Models/EndpointBuilder.swift; sourceTree = SOURCE_ROOT; };
+		E60670872A9683CC004AD6FA /* FollowingTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTabViewModel.swift; sourceTree = "<group>"; };
+		E60670892A968763004AD6FA /* FollowingTabViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTabViewComponents.swift; sourceTree = "<group>"; };
+		E606708B2A968CB0004AD6FA /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
+		E606708D2A96958C004AD6FA /* PlayerDetailsViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewComponents.swift; sourceTree = "<group>"; };
+		E60670B02A97E4AF004AD6FA /* BallinStats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BallinStats.xcdatamodel; sourceTree = "<group>"; };
+		E60670B22A97E5BE004AD6FA /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E6083FEC2A9FBB8200315775 /* TeamDetailsOrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsOrientationView.swift; sourceTree = "<group>"; };
+		E6083FEE2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsLandscapeView.swift; sourceTree = "<group>"; };
+		E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabViewModel.swift; sourceTree = "<group>"; };
+		E62235722AC34A2100D5A7B3 /* BallinStatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BallinStatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E62235742AC34A2100D5A7B3 /* BallinStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallinStatsTests.swift; sourceTree = "<group>"; };
+		E62555662AA1051100BBE6C4 /* PlayerDetailsOrientationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsOrientationView.swift; sourceTree = "<group>"; };
+		E651A5FB2AA105810018C21C /* PlayerDetailsLandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsLandscapeView.swift; sourceTree = "<group>"; };
+		E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
+		E668BE792A8FBFF900E4C096 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		E668BE7B2A8FC87900E4C096 /* PlayersTabComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTabComponents.swift; sourceTree = "<group>"; };
+		E67A2D5C2A93B2F300BA6D39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E67A2D5E2A93B82B00BA6D39 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		E6807D592A8DA069009B32AC /* TabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationView.swift; sourceTree = "<group>"; };
+		E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTabView.swift; sourceTree = "<group>"; };
+		E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabView.swift; sourceTree = "<group>"; };
+		E6807D5F2A8DA333009B32AC /* FollowingTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTabView.swift; sourceTree = "<group>"; };
+		E6807D642A8DAB3C009B32AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E6807D662A8DB971009B32AC /* TeamDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetails.swift; sourceTree = "<group>"; };
 		E68FDB002A8D5A7D00A9AE60 /* BallinStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BallinStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68FDB032A8D5A7D00A9AE60 /* BallinStatsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallinStatsApp.swift; sourceTree = "<group>"; };
-		E68FDB052A8D5A7D00A9AE60 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E68FDB072A8D5A7F00A9AE60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E68FDB0A2A8D5A7F00A9AE60 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E6A1E7B32A8E9931005C3C44 /* TeamsTabComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTabComponents.swift; sourceTree = "<group>"; };
+		E6A1E7B62A8EA397005C3C44 /* TeamDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsView.swift; sourceTree = "<group>"; };
+		E6A1E7B82A8EACD0005C3C44 /* PlayersTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersTabViewModel.swift; sourceTree = "<group>"; };
+		E6A1E7BC2A8EB26D005C3C44 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		E6D7D09F2A8FF8DD007CD7AB /* TeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewModel.swift; sourceTree = "<group>"; };
+		E6D7D0A12A8FFA11007CD7AB /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewComponents.swift; sourceTree = "<group>"; };
+		E6E5E5452A9E466700B834E4 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		E6E5E5492A9E48C800B834E4 /* NoNetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNetworkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E622356F2AC34A2100D5A7B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E68FDAFD2A8D5A7D00A9AE60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,10 +118,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E60670AE2A97E497004AD6FA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E60670AF2A97E4AF004AD6FA /* BallinStats.xcdatamodeld */,
+				E60670B22A97E5BE004AD6FA /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		E62235732AC34A2100D5A7B3 /* BallinStatsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E62235742AC34A2100D5A7B3 /* BallinStatsTests.swift */,
+			);
+			path = BallinStatsTests;
+			sourceTree = "<group>";
+		};
+		E668BE762A8EBC1E00E4C096 /* PlayerDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				E668BE772A8EBC3700E4C096 /* PlayerDetailsView.swift */,
+				E606708B2A968CB0004AD6FA /* PlayerDetailsViewModel.swift */,
+				E606708D2A96958C004AD6FA /* PlayerDetailsViewComponents.swift */,
+				E62555662AA1051100BBE6C4 /* PlayerDetailsOrientationView.swift */,
+				E651A5FB2AA105810018C21C /* PlayerDetailsLandscapeView.swift */,
+			);
+			path = PlayerDetailsView;
+			sourceTree = "<group>";
+		};
+		E6807D612A8DA38B009B32AC /* PlayersTabView */ = {
+			isa = PBXGroup;
+			children = (
+				E6807D5B2A8DA300009B32AC /* PlayersTabView.swift */,
+				E6A1E7B82A8EACD0005C3C44 /* PlayersTabViewModel.swift */,
+				E668BE7B2A8FC87900E4C096 /* PlayersTabComponents.swift */,
+			);
+			path = PlayersTabView;
+			sourceTree = "<group>";
+		};
+		E6807D622A8DA3B5009B32AC /* TeamsTabView */ = {
+			isa = PBXGroup;
+			children = (
+				E6807D5D2A8DA324009B32AC /* TeamsTabView.swift */,
+				E61E31FC2A8E72D600CC96DC /* TeamsTabViewModel.swift */,
+				E6A1E7B32A8E9931005C3C44 /* TeamsTabComponents.swift */,
+			);
+			path = TeamsTabView;
+			sourceTree = "<group>";
+		};
+		E6807D632A8DA3C8009B32AC /* FollowingTabView */ = {
+			isa = PBXGroup;
+			children = (
+				E6807D5F2A8DA333009B32AC /* FollowingTabView.swift */,
+				E60670872A9683CC004AD6FA /* FollowingTabViewModel.swift */,
+				E60670892A968763004AD6FA /* FollowingTabViewComponents.swift */,
+			);
+			path = FollowingTabView;
+			sourceTree = "<group>";
+		};
 		E68FDAF72A8D5A7D00A9AE60 = {
 			isa = PBXGroup;
 			children = (
 				E68FDB022A8D5A7D00A9AE60 /* BallinStats */,
+				E62235732AC34A2100D5A7B3 /* BallinStatsTests */,
 				E68FDB012A8D5A7D00A9AE60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				E68FDB002A8D5A7D00A9AE60 /* BallinStats.app */,
+				E62235722AC34A2100D5A7B3 /* BallinStatsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,6 +198,7 @@
 		E68FDB022A8D5A7D00A9AE60 /* BallinStats */ = {
 			isa = PBXGroup;
 			children = (
+				E60670AE2A97E497004AD6FA /* CoreData */,
 				E68FDB142A8D5B6C00A9AE60 /* Utils */,
 				E68FDB132A8D5B0E00A9AE60 /* Network */,
 				E68FDB112A8D5AB900A9AE60 /* Views */,
@@ -74,6 +222,12 @@
 		E68FDB112A8D5AB900A9AE60 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E668BE762A8EBC1E00E4C096 /* PlayerDetailsView */,
+				E6A1E7B52A8EA382005C3C44 /* TeamDetailsView */,
+				E6807D622A8DA3B5009B32AC /* TeamsTabView */,
+				E6807D612A8DA38B009B32AC /* PlayersTabView */,
+				E6807D632A8DA3C8009B32AC /* FollowingTabView */,
+				E6E5E5492A9E48C800B834E4 /* NoNetworkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -81,6 +235,11 @@
 		E68FDB122A8D5AE800A9AE60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E6807D662A8DB971009B32AC /* TeamDetails.swift */,
+				E6A1E7BC2A8EB26D005C3C44 /* Player.swift */,
+				E6D7D0A12A8FFA11007CD7AB /* Game.swift */,
+				E60670812A93C290004AD6FA /* ResultsPage.swift */,
+				E60670832A93C2E0004AD6FA /* PageMetaData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,6 +247,10 @@
 		E68FDB132A8D5B0E00A9AE60 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E60670852A93D6FE004AD6FA /* EndpointBuilder.swift */,
+				E67A2D5C2A93B2F300BA6D39 /* NetworkManager.swift */,
+				E67A2D5E2A93B82B00BA6D39 /* Decoder.swift */,
+				E6E5E5452A9E466700B834E4 /* NetworkMonitor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -95,6 +258,8 @@
 		E68FDB142A8D5B6C00A9AE60 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E6807D642A8DAB3C009B32AC /* Constants.swift */,
+				E668BE792A8FBFF900E4C096 /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -102,14 +267,44 @@
 		E68FDB152A8D5BBC00A9AE60 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E68FDB052A8D5A7D00A9AE60 /* ContentView.swift */,
+				E6807D592A8DA069009B32AC /* TabNavigationView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		E6A1E7B52A8EA382005C3C44 /* TeamDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				E6A1E7B62A8EA397005C3C44 /* TeamDetailsView.swift */,
+				E6D7D09F2A8FF8DD007CD7AB /* TeamDetailsViewModel.swift */,
+				E6D7D0A32A9001AE007CD7AB /* TeamDetailsViewComponents.swift */,
+				E6083FEC2A9FBB8200315775 /* TeamDetailsOrientationView.swift */,
+				E6083FEE2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift */,
+			);
+			path = TeamDetailsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E62235712AC34A2100D5A7B3 /* BallinStatsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E622357A2AC34A2200D5A7B3 /* Build configuration list for PBXNativeTarget "BallinStatsTests" */;
+			buildPhases = (
+				E622356E2AC34A2100D5A7B3 /* Sources */,
+				E622356F2AC34A2100D5A7B3 /* Frameworks */,
+				E62235702AC34A2100D5A7B3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E62235772AC34A2100D5A7B3 /* PBXTargetDependency */,
+			);
+			name = BallinStatsTests;
+			productName = BallinStatsTests;
+			productReference = E62235722AC34A2100D5A7B3 /* BallinStatsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E68FDAFF2A8D5A7D00A9AE60 /* BallinStats */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E68FDB0E2A8D5A7F00A9AE60 /* Build configuration list for PBXNativeTarget "BallinStats" */;
@@ -135,9 +330,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					E62235712AC34A2100D5A7B3 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = E68FDAFF2A8D5A7D00A9AE60;
+					};
 					E68FDAFF2A8D5A7D00A9AE60 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -157,11 +356,19 @@
 			projectRoot = "";
 			targets = (
 				E68FDAFF2A8D5A7D00A9AE60 /* BallinStats */,
+				E62235712AC34A2100D5A7B3 /* BallinStatsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E62235702AC34A2100D5A7B3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E68FDAFE2A8D5A7D00A9AE60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,7 +384,7 @@
 		E68FDB162A8D5F6E00A9AE60 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -189,7 +396,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 			showEnvVarsInLog = 0;
@@ -197,18 +404,114 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E622356E2AC34A2100D5A7B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E62235752AC34A2100D5A7B3 /* BallinStatsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E68FDAFC2A8D5A7D00A9AE60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E68FDB062A8D5A7D00A9AE60 /* ContentView.swift in Sources */,
+				E6D7D0A42A9001AE007CD7AB /* TeamDetailsViewComponents.swift in Sources */,
+				E668BE782A8EBC3700E4C096 /* PlayerDetailsView.swift in Sources */,
+				E60670882A9683CC004AD6FA /* FollowingTabViewModel.swift in Sources */,
+				E651A5FC2AA105810018C21C /* PlayerDetailsLandscapeView.swift in Sources */,
+				E6A1E7B42A8E9931005C3C44 /* TeamsTabComponents.swift in Sources */,
+				E668BE7A2A8FBFF900E4C096 /* Colors.swift in Sources */,
+				E61E31FD2A8E72D600CC96DC /* TeamsTabViewModel.swift in Sources */,
+				E67A2D5D2A93B2F300BA6D39 /* NetworkManager.swift in Sources */,
+				E6E5E5462A9E466700B834E4 /* NetworkMonitor.swift in Sources */,
+				E67A2D5F2A93B82B00BA6D39 /* Decoder.swift in Sources */,
+				E6807D672A8DB971009B32AC /* TeamDetails.swift in Sources */,
+				E6807D5E2A8DA324009B32AC /* TeamsTabView.swift in Sources */,
+				E60670B12A97E4AF004AD6FA /* BallinStats.xcdatamodeld in Sources */,
+				E6D7D0A02A8FF8DD007CD7AB /* TeamDetailsViewModel.swift in Sources */,
+				E6807D5C2A8DA300009B32AC /* PlayersTabView.swift in Sources */,
+				E60670842A93C2E0004AD6FA /* PageMetaData.swift in Sources */,
 				E68FDB042A8D5A7D00A9AE60 /* BallinStatsApp.swift in Sources */,
+				E6083FEF2A9FBC7E00315775 /* TeamDetailsLandscapeView.swift in Sources */,
+				E606708E2A96958C004AD6FA /* PlayerDetailsViewComponents.swift in Sources */,
+				E60670862A93D6FE004AD6FA /* EndpointBuilder.swift in Sources */,
+				E6A1E7B72A8EA397005C3C44 /* TeamDetailsView.swift in Sources */,
+				E62555672AA1051100BBE6C4 /* PlayerDetailsOrientationView.swift in Sources */,
+				E6D7D0A22A8FFA11007CD7AB /* Game.swift in Sources */,
+				E60670822A93C290004AD6FA /* ResultsPage.swift in Sources */,
+				E60670B32A97E5BE004AD6FA /* CoreDataManager.swift in Sources */,
+				E6A1E7BD2A8EB26D005C3C44 /* Player.swift in Sources */,
+				E6E5E54A2A9E48C800B834E4 /* NoNetworkView.swift in Sources */,
+				E6807D602A8DA333009B32AC /* FollowingTabView.swift in Sources */,
+				E6807D5A2A8DA069009B32AC /* TabNavigationView.swift in Sources */,
+				E668BE7C2A8FC87900E4C096 /* PlayersTabComponents.swift in Sources */,
+				E6807D652A8DAB3C009B32AC /* Constants.swift in Sources */,
+				E606708C2A968CB0004AD6FA /* PlayerDetailsViewModel.swift in Sources */,
+				E606708A2A968763004AD6FA /* FollowingTabViewComponents.swift in Sources */,
+				E6083FED2A9FBB8200315775 /* TeamDetailsOrientationView.swift in Sources */,
+				E6A1E7B92A8EACD0005C3C44 /* PlayersTabViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E62235772AC34A2100D5A7B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E68FDAFF2A8D5A7D00A9AE60 /* BallinStats */;
+			targetProxy = E62235762AC34A2100D5A7B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E62235782AC34A2200D5A7B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6MTR86NAP;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gramos.BallinStatsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BallinStats.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BallinStats";
+			};
+			name = Debug;
+		};
+		E62235792AC34A2200D5A7B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6MTR86NAP;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gramos.BallinStatsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BallinStats.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BallinStats";
+			};
+			name = Release;
+		};
 		E68FDB0C2A8D5A7F00A9AE60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -344,7 +647,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gramos.BallinStats;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gramos.BallinStats2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -373,7 +676,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gramos.BallinStats;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gramos.BallinStats2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -384,6 +687,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E622357A2AC34A2200D5A7B3 /* Build configuration list for PBXNativeTarget "BallinStatsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E62235782AC34A2200D5A7B3 /* Debug */,
+				E62235792AC34A2200D5A7B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E68FDAFB2A8D5A7D00A9AE60 /* Build configuration list for PBXProject "BallinStats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -403,6 +715,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E60670AF2A97E4AF004AD6FA /* BallinStats.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E60670B02A97E4AF004AD6FA /* BallinStats.xcdatamodel */,
+			);
+			currentVersion = E60670B02A97E4AF004AD6FA /* BallinStats.xcdatamodel */;
+			path = BallinStats.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E68FDAF82A8D5A7D00A9AE60 /* Project object */;
 }
